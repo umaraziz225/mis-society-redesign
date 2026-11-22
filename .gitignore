@@ -1,0 +1,8 @@
+node_modules/
+.tmp/
+quiz-clone/
+Thumbs.db
+.DS_Store
+desktop.ini
+*.log
+test-output/
