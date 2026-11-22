@@ -19,3 +19,8 @@ Facts we still need. Never invent them. Where a fact would go on a page, leave a
 ## Not yet verified for the Student Toolkit (resources.html)
 
 Don't publish until checked: LinkedIn Learning, Tableau for Students, Microsoft exam discounts, Career Center tools (Handshake, resume review), Library resources (O'Reilly, etc.).
+
+## Added in Stage 1
+
+- [ ] **Logo on the navy footer** (every page, footer): the logo is a black hexagon with a purple-to-cyan border, not blue and white. It sits on white in the navbar and on navy in the footer. Ask the club whether a white or blue version exists.
+- [ ] **Real Instagram URL**: an HTML comment marks the spot in every page's footer (same item as above).
