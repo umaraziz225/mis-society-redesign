@@ -25,6 +25,7 @@ async function takeQuiz(page) {
   let steps = 0;
   while (await page.locator("#view-quiz").isVisible()) {
     if (++steps > 80) return "quiz did not finish after 80 steps";
+    if (steps === 1 && (await page.locator("h1:visible").count()) !== 1) return "the question screen should have exactly one h1";
     const pct = await page.locator("#progress-pct").innerText();
     const opts = page.locator("#step-body .option-card:not(.is-disabled)");
     const n = await opts.count();

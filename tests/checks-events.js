@@ -146,6 +146,16 @@ module.exports = [
     if (r.sw <= r.cw) return `table does not scroll (scrollWidth ${r.sw}, width ${r.cw})`;
     return r.page <= r.vw ? "" : `page scrolls sideways (${r.page} > ${r.vw})`;
   }],
+  ["Events: the whole table fits without scrolling on a 768px tablet and 1280px desktop", async page => {
+    const errs = [];
+    for (const w of [768, 1280]) {
+      await page.setViewportSize({ width: w, height: 900 });
+      const r = await page.evaluate(() => { const x = document.querySelector(".table-responsive"); return [x.scrollWidth, x.clientWidth]; });
+      if (r[0] > r[1] + 1) errs.push(`${w}px: table is ${r[0]}px wide in a ${r[1]}px box`);
+    }
+    await page.setViewportSize({ width: 1280, height: 900 });
+    return errs.join("; ");
+  }],
   ["Events: a modal fits a 375px phone (no sideways scroll, buttons reachable)", async page => {
     await page.setViewportSize({ width: 375, height: 800 });
     const b = page.locator(".events-table button").nth(4), sel = "#modal-company-visit";

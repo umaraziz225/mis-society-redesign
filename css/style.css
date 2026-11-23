@@ -307,7 +307,7 @@ html:not(.js) .accordion-button::after { display: none; }
 .event-facts { list-style: none; padding: 0; margin: 0 0 var(--space-3); color: var(--text-muted); font-size: .98rem; }
 .event-facts li { margin-bottom: .3rem; }
 .event-facts i { color: var(--primary); margin-right: .35rem; }
-.events-table { min-width: 44rem; }   /* narrower than this the table scrolls sideways inside its wrapper */
+.events-table { min-width: 40rem; }   /* narrower than this the table scrolls sideways inside its wrapper */
 .events-table tbody th { color: var(--primary-dark); }
 .sample-alert { --bs-alert-bg: #E3EEFA; --bs-alert-color: var(--primary-dark); --bs-alert-border-color: var(--border); margin-bottom: var(--space-4); }   /* navy on light blue 11.0:1 */
 .sample-alert .bi { color: var(--primary); }

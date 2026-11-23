@@ -81,14 +81,17 @@
     </section>
 
     <!-- ================= QUIZ ================= -->
-    <section id="view-quiz" class="view" hidden aria-label="Quiz">
+    <section id="view-quiz" class="view" hidden aria-labelledby="quiz-h1">
+      <h1 id="quiz-h1" class="visually-hidden">Career Fit Quiz questions</h1>
       <div class="row justify-content-center">
         <div class="col-lg-8 col-xl-7">
           <div class="d-flex justify-content-between small fw-semibold mb-2">
             <span id="part-label"></span>
             <span id="progress-pct" class="text-muted"></span>
           </div>
+          <!-- html-validate-disable-next prefer-native-element -- Felix's progress bar; app.js sets its aria-valuenow -->
           <div class="progress quiz-progress" role="progressbar" aria-label="Quiz progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <!-- html-validate-disable-next no-inline-style -- app.js sets this width as the quiz advances -->
             <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
           </div>
 
@@ -125,6 +128,7 @@
           <div id="confidence-note" class="alert alert-warning" hidden></div>
           <div id="tie-note" class="alert alert-primary" hidden></div>
 
+          <h2 class="visually-hidden">Your top matches</h2>
           <div id="cards"></div>
 
           <div class="row g-4 mt-1">

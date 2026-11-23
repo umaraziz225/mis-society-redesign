@@ -2,4 +2,4 @@
 
 MIS 410 (CSUSM, Fall 2026) group project: a mock redesign of the CSUSM MIS Society website.
 
-Status: Stages 1-7 complete (skeleton, Home, Student Toolkit, Careers + quiz, Events, About, Join). Next: Stage 8 (full QA) and Stage 9 (deploy). See CLAUDE.md for project context and docs/build-prompts.md for the build stages.
+Status: Stages 1-8 complete (all pages built; full QA pass in docs/QA_REPORT.md). Next: Stage 9 (deploy) and Stage 10 (documentation). See CLAUDE.md for project context and docs/build-prompts.md for the build stages.

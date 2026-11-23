@@ -176,6 +176,17 @@ async function runPage(browser, file, mode, base) {
       await page.screenshot({ path: path.join(SHOTS, `${file.replace(/[\\/]/g, "_").replace(/\.html$/, "")}-${w}.png`), fullPage: true });
     }
   }
+  // In-between widths where layouts tend to break: a very small phone, the 992px point where the hamburger becomes a full navbar, and a large desktop
+  for (const w of [320, 992, 1024, 1440]) {
+    await page.setViewportSize({ width: w, height: 900 });
+    await page.waitForTimeout(150);
+    await check(P, M, `No horizontal overflow @${w}px`, async () => { const b = await page.evaluate(inPage.overflow); return b.join("; "); });
+    if (w >= 992) await check(P, M, `Navbar stays on one row @${w}px`, async () => {
+      const h = await page.evaluate(() => document.querySelector(".navbar > .container").getBoundingClientRect().height);
+      return h < 90 ? "" : `navbar is ${Math.round(h)}px tall (it wrapped)`;
+    });
+  }
+  await page.setViewportSize({ width: 1280, height: 900 });
 
   // Hamburger @375
   await page.setViewportSize({ width: 375, height: 800 });
@@ -267,10 +278,7 @@ async function runPage(browser, file, mode, base) {
 async function onceChecks(files) {
   const hv = new HtmlValidate({
     extends: ["html-validate:recommended"],
-    rules: {
-      "no-trailing-whitespace": "off", "void-style": "off", "attribute-boolean-style": "off", "attribute-empty-style": "off",
-      "no-inline-style": "off", "prefer-native-element": "off", "doctype-style": "off", "long-title": "off",
-    },
+    // Every recommended rule is on. The only exceptions are three comments in Felix's quiz markup (in quiz/index.html).
   });
   for (const f of files) {
     await check(f, "once", "html-validate passes", async () => {
