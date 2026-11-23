@@ -78,7 +78,9 @@ Re-verified 11/22 against each official page. Link to the official page on every
 | Azure for Students | $100 credit to use within 12 months, select free services, no credit card. Unused credit does not carry over. Must be 18+ and a full-time student at an accredited, degree-granting school. (No "renewable yearly" on the page.) | Apply on the Azure page and verify with your school email | https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p/ |
 | GitHub Student Developer Pack | Free GitHub Pro while you are a student, partner offers, and GitHub Copilot Student for verified students (unlimited code completions, limited chat and agent use) | Sign up and verify at education.github.com | https://education.github.com/pack |
 
-**Not yet verified, don't publish until checked:** LinkedIn Learning access, Tableau for Students, Microsoft exam discounts, Career Center tools (Handshake, resume review), Library resources (O'Reilly, etc.).
+**Verified 11/22 (CSUSM Career Center home page, https://www.csusm.edu/careers/index.html):** Handshake is where students make appointments, search for jobs, RSVP for events, and get resume/cover letter critiques. The page also lists free headshots, career counseling, mentorship, internship information, and the Cougar Career Closet (https://www.csusm.edu/careers/careercentercloset.html).
+
+**Not yet verified, don't publish until checked:** LinkedIn Learning access, Tableau for Students, Microsoft exam discounts, Library resources (O'Reilly, etc.).
 
 Add a reminder on AI tool cards: check each instructor's AI policy before using AI for coursework.
 

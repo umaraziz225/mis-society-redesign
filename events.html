@@ -41,11 +41,391 @@
     <section class="page-header">
       <div class="container">
         <h1>Events</h1>
-        <p class="lead">Speakers, company visits, and workshops hosted by the MIS Society. See what is coming up and what past events looked like.</p>
+        <p class="lead">The MIS Society organizes events and seminars that help members with career development and professional networking. To hear about them, email <a class="text-white" href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a> or follow the club on <a class="text-white" href="https://www.linkedin.com/in/mis-society-203880251/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
       </div>
     </section>
     <hr class="divider-gradient">
-    <!-- Page content is added in later stages. -->
+
+    <!-- SPRING 2027 SCHEDULE (SAMPLE). The six events are the same ones listed in the comment block in index.html.
+         The club has no confirmed events yet. When it does, replace the rows, cards and modals below with real ones
+         and remove the "Sample" alert and badges. Month-level dates only; room: "posted by the club". -->
+    <section class="section" aria-labelledby="schedule-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Spring 2027</p>
+          <h2 id="schedule-heading">Spring 2027 schedule <span class="badge badge-accent align-middle ms-2">Sample</span></h2>
+        </div>
+        <div class="alert alert-info sample-alert d-flex align-items-start gap-2" role="note">
+          <i class="bi bi-info-circle-fill mt-1" aria-hidden="true"></i>
+          <div><strong>Sample schedule for class demo.</strong> Check the club's <a href="https://www.linkedin.com/in/mis-society-203880251/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a> or <a href="mailto:csusmmissociety@gmail.com">email us</a> for real dates.</div>
+        </div>
+        <div class="table-wrap">
+          <div class="table-responsive">
+            <table class="table table-striped align-middle events-table">
+              <caption class="visually-hidden">Sample Spring 2027 events</caption>
+              <thead>
+                <tr><th scope="col">Event</th><th scope="col">Type</th><th scope="col">Month</th><th scope="col">Who it's for</th><th scope="col">Details</th></tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">Spring Kickoff &amp; Info Night</th>
+                <td><span class="badge badge-type badge-type-social">Social</span></td>
+                <td>Late January 2027</td>
+                <td>Open to all students</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm js-only" data-bs-toggle="modal" data-bs-target="#modal-spring-kickoff" aria-label="Details for Spring Kickoff &amp; Info Night">Details</button></td>
+              </tr>
+              <tr>
+                <th scope="row">Resume &amp; LinkedIn Workshop</th>
+                <td><span class="badge badge-type badge-type-workshop">Workshop</span></td>
+                <td>February 2027</td>
+                <td>Open to all students</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm js-only" data-bs-toggle="modal" data-bs-target="#modal-resume-linkedin-workshop" aria-label="Details for Resume &amp; LinkedIn Workshop">Details</button></td>
+              </tr>
+              <tr>
+                <th scope="row">Industry Speaker Panel: Careers in MIS</th>
+                <td><span class="badge badge-type badge-type-speaker">Speaker</span></td>
+                <td>March 2027</td>
+                <td>Open to all students</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm js-only" data-bs-toggle="modal" data-bs-target="#modal-speaker-panel" aria-label="Details for Industry Speaker Panel: Careers in MIS">Details</button></td>
+              </tr>
+              <tr>
+                <th scope="row">SQL &amp; Power BI Hands-On Workshop</th>
+                <td><span class="badge badge-type badge-type-workshop">Workshop</span></td>
+                <td>March 2027</td>
+                <td>Open to all students</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm js-only" data-bs-toggle="modal" data-bs-target="#modal-sql-power-bi-workshop" aria-label="Details for SQL &amp; Power BI Hands-On Workshop">Details</button></td>
+              </tr>
+              <tr>
+                <th scope="row">Company Visit</th>
+                <td><span class="badge badge-type badge-type-company-visit">Company visit</span></td>
+                <td>April 2027</td>
+                <td>Members</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm js-only" data-bs-toggle="modal" data-bs-target="#modal-company-visit" aria-label="Details for Company Visit">Details</button></td>
+              </tr>
+              <tr>
+                <th scope="row">End-of-Year Mixer &amp; Officer Elections Info</th>
+                <td><span class="badge badge-type badge-type-social">Social</span></td>
+                <td>May 2027</td>
+                <td>Members</td>
+                <td><button type="button" class="btn btn-outline-primary btn-sm js-only" data-bs-toggle="modal" data-bs-target="#modal-end-of-year-mixer" aria-label="Details for End-of-Year Mixer &amp; Officer Elections Info">Details</button></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT CARDS -->
+    <section class="section section-alt" aria-labelledby="cards-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What you get out of it</p>
+          <h2 id="cards-heading">Sample events at a glance</h2>
+          <p>Each card says who the event is for and what you walk away with. The RSVP button explains how RSVPs work.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 event-card" id="spring-kickoff">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2"><span class="badge badge-type badge-type-social">Social</span></div>
+                <h3 class="card-title h5">Spring Kickoff &amp; Info Night</h3>
+                <ul class="event-facts">
+                  <li><i class="bi bi-calendar3" aria-hidden="true"></i> Late January 2027</li>
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+                  <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+                </ul>
+                <p>Learn what the MIS Society does, how to get involved, and who to talk to.</p>
+                <div class="mt-auto"><button type="button" class="btn btn-primary js-only" data-bs-toggle="modal" data-bs-target="#rsvp-modal" aria-label="RSVP for Spring Kickoff &amp; Info Night">RSVP</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 event-card" id="resume-linkedin-workshop">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2"><span class="badge badge-type badge-type-workshop">Workshop</span></div>
+                <h3 class="card-title h5">Resume &amp; LinkedIn Workshop</h3>
+                <ul class="event-facts">
+                  <li><i class="bi bi-calendar3" aria-hidden="true"></i> February 2027</li>
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+                  <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+                </ul>
+                <p>You leave with a stronger resume and a LinkedIn profile that is ready for recruiters. This is part of the club's internship prep.</p>
+                <div class="mt-auto"><button type="button" class="btn btn-primary js-only" data-bs-toggle="modal" data-bs-target="#rsvp-modal" aria-label="RSVP for Resume &amp; LinkedIn Workshop">RSVP</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 event-card" id="speaker-panel">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2"><span class="badge badge-type badge-type-speaker">Speaker</span></div>
+                <h3 class="card-title h5">Industry Speaker Panel: Careers in MIS</h3>
+                <ul class="event-facts">
+                  <li><i class="bi bi-calendar3" aria-hidden="true"></i> March 2027</li>
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+                  <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+                </ul>
+                <p>Hear how professionals got started in MIS and ask them your own questions. You leave with a clearer idea of which paths to explore.</p>
+                <div class="mt-auto"><button type="button" class="btn btn-primary js-only" data-bs-toggle="modal" data-bs-target="#rsvp-modal" aria-label="RSVP for Industry Speaker Panel: Careers in MIS">RSVP</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 event-card" id="sql-power-bi-workshop">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2"><span class="badge badge-type badge-type-workshop">Workshop</span></div>
+                <h3 class="card-title h5">SQL &amp; Power BI Hands-On Workshop</h3>
+                <ul class="event-facts">
+                  <li><i class="bi bi-calendar3" aria-hidden="true"></i> March 2027</li>
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+                  <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+                </ul>
+                <p>Practice writing SQL queries and building a Power BI report. You leave with a first project to build on.</p>
+                <div class="mt-auto"><button type="button" class="btn btn-primary js-only" data-bs-toggle="modal" data-bs-target="#rsvp-modal" aria-label="RSVP for SQL &amp; Power BI Hands-On Workshop">RSVP</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 event-card" id="company-visit">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2"><span class="badge badge-type badge-type-company-visit">Company visit</span></div>
+                <h3 class="card-title h5">Company Visit</h3>
+                <ul class="event-facts">
+                  <li><i class="bi bi-calendar3" aria-hidden="true"></i> April 2027</li>
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Members</li>
+                  <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+                </ul>
+                <p>See a real workplace and talk with the people who work there. You leave knowing what a day in an MIS-related job can look like. The club will announce the company.</p>
+                <div class="mt-auto"><button type="button" class="btn btn-primary js-only" data-bs-toggle="modal" data-bs-target="#rsvp-modal" aria-label="RSVP for Company Visit">RSVP</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 event-card" id="end-of-year-mixer">
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2"><span class="badge badge-type badge-type-social">Social</span></div>
+                <h3 class="card-title h5">End-of-Year Mixer &amp; Officer Elections Info</h3>
+                <ul class="event-facts">
+                  <li><i class="bi bi-calendar3" aria-hidden="true"></i> May 2027</li>
+                  <li><i class="bi bi-people" aria-hidden="true"></i> Members</li>
+                  <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+                </ul>
+                <p>Meet members and officers, and learn how officer elections work. You leave knowing how to get more involved next year.</p>
+                <div class="mt-auto"><button type="button" class="btn btn-primary js-only" data-bs-toggle="modal" data-bs-target="#rsvp-modal" aria-label="RSVP for End-of-Year Mixer &amp; Officer Elections Info">RSVP</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPES OF EVENTS -->
+    <section class="section" aria-labelledby="types-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What to expect</p>
+          <h2 id="types-heading">Types of events we run</h2>
+          <p>Our events fall into four kinds. Come to one, or come to all of them.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-mic"></i></span>
+              <h3 class="card-title h5">Guest speakers</h3>
+              <p class="mb-0">Professionals share how they built their careers and answer your questions. It is real Q&amp;A, not just a presentation.</p>
+            </div></div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-tools"></i></span>
+              <h3 class="card-title h5">Workshops</h3>
+              <p class="mb-0">Hands-on sessions that build skills you can use in internship applications and class projects.</p>
+            </div></div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-building"></i></span>
+              <h3 class="card-title h5">Company visits</h3>
+              <p class="mb-0">Visit organizations to see how technology and MIS teams work, and meet the people on them.</p>
+            </div></div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-cup-hot"></i></span>
+              <h3 class="card-title h5">Socials</h3>
+              <p class="mb-0">Meet other members, officers, and faculty in a relaxed setting and grow your network.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAST EVENTS GALLERY: not built yet.
+         NEEDS CONTENT: real photos from past events, with permission from the people in them (logged in MISSING_CONTENT.md).
+         Add a "Past events" section here once the team has them. -->
+
+    <!-- MODALS. One "Details" modal per event, and one shared RSVP modal. Bootstrap closes them with Esc and returns focus to the button. -->
+    <div class="modal fade" id="modal-spring-kickoff" tabindex="-1" aria-labelledby="modal-spring-kickoff-title">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="modal-spring-kickoff-title">Spring Kickoff &amp; Info Night</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="badge badge-type badge-type-social">Social</span> <span class="badge badge-accent">Sample event</span></p>
+            <ul class="event-facts">
+              <li><i class="bi bi-calendar3" aria-hidden="true"></i> Late January 2027</li>
+              <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+            </ul>
+            <p>Learn what the MIS Society does, how to get involved, and who to talk to.</p>
+            <p class="small text-muted-2 mb-0">This event is part of a sample schedule for a class demo. The club has not confirmed it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-resume-linkedin-workshop" tabindex="-1" aria-labelledby="modal-resume-linkedin-workshop-title">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="modal-resume-linkedin-workshop-title">Resume &amp; LinkedIn Workshop</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="badge badge-type badge-type-workshop">Workshop</span> <span class="badge badge-accent">Sample event</span></p>
+            <ul class="event-facts">
+              <li><i class="bi bi-calendar3" aria-hidden="true"></i> February 2027</li>
+              <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+            </ul>
+            <p>You leave with a stronger resume and a LinkedIn profile that is ready for recruiters. This is part of the club's internship prep.</p>
+            <p class="small text-muted-2 mb-0">This event is part of a sample schedule for a class demo. The club has not confirmed it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-speaker-panel" tabindex="-1" aria-labelledby="modal-speaker-panel-title">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="modal-speaker-panel-title">Industry Speaker Panel: Careers in MIS</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="badge badge-type badge-type-speaker">Speaker</span> <span class="badge badge-accent">Sample event</span></p>
+            <ul class="event-facts">
+              <li><i class="bi bi-calendar3" aria-hidden="true"></i> March 2027</li>
+              <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+            </ul>
+            <p>Hear how professionals got started in MIS and ask them your own questions. You leave with a clearer idea of which paths to explore.</p>
+            <p class="small text-muted-2 mb-0">This event is part of a sample schedule for a class demo. The club has not confirmed it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-sql-power-bi-workshop" tabindex="-1" aria-labelledby="modal-sql-power-bi-workshop-title">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="modal-sql-power-bi-workshop-title">SQL &amp; Power BI Hands-On Workshop</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="badge badge-type badge-type-workshop">Workshop</span> <span class="badge badge-accent">Sample event</span></p>
+            <ul class="event-facts">
+              <li><i class="bi bi-calendar3" aria-hidden="true"></i> March 2027</li>
+              <li><i class="bi bi-people" aria-hidden="true"></i> Open to all students</li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+            </ul>
+            <p>Practice writing SQL queries and building a Power BI report. You leave with a first project to build on.</p>
+            <p class="small text-muted-2 mb-0">This event is part of a sample schedule for a class demo. The club has not confirmed it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-company-visit" tabindex="-1" aria-labelledby="modal-company-visit-title">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="modal-company-visit-title">Company Visit</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="badge badge-type badge-type-company-visit">Company visit</span> <span class="badge badge-accent">Sample event</span></p>
+            <ul class="event-facts">
+              <li><i class="bi bi-calendar3" aria-hidden="true"></i> April 2027</li>
+              <li><i class="bi bi-people" aria-hidden="true"></i> Members</li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+            </ul>
+            <p>See a real workplace and talk with the people who work there. You leave knowing what a day in an MIS-related job can look like. The club will announce the company.</p>
+            <p class="small text-muted-2 mb-0">This event is part of a sample schedule for a class demo. The club has not confirmed it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-end-of-year-mixer" tabindex="-1" aria-labelledby="modal-end-of-year-mixer-title">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="modal-end-of-year-mixer-title">End-of-Year Mixer &amp; Officer Elections Info</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2"><span class="badge badge-type badge-type-social">Social</span> <span class="badge badge-accent">Sample event</span></p>
+            <ul class="event-facts">
+              <li><i class="bi bi-calendar3" aria-hidden="true"></i> May 2027</li>
+              <li><i class="bi bi-people" aria-hidden="true"></i> Members</li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</li>
+            </ul>
+            <p>Meet members and officers, and learn how officer elections work. You leave knowing how to get more involved next year.</p>
+            <p class="small text-muted-2 mb-0">This event is part of a sample schedule for a class demo. The club has not confirmed it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="rsvp-modal" tabindex="-1" aria-labelledby="rsvp-modal-title">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="rsvp-modal-title">How to RSVP</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>This page does not take RSVPs. The club posts RSVP links on <a href="https://www.linkedin.com/in/mis-society-203880251/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a> and sends them by email when an event is confirmed.</p>
+            <p class="mb-0">Questions? Email <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a>.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">

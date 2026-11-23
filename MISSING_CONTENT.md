@@ -40,9 +40,15 @@ Don't publish until checked: LinkedIn Learning, Tableau for Students, Microsoft 
 
 ## Added in Stage 4
 
-- [ ] **Career Center facts now verified** (careers.html): the Career Center home page says Handshake offers appointments, job search, event RSVPs and resume/cover letter critiques, and lists free headshots, career counseling, mentorship and internship information. The internship tips use only that. CLAUDE.md section 6 still lists "Career Center tools (Handshake, resume review)" as not yet verified; update that line when the team agrees.
 - [ ] **Two certification links could not be loaded by a script** (careers.html): ASQ and PMI block automated requests (403). Their page URLs were confirmed through search results, not by opening them. Open each link once by hand: ASQ Yellow Belt, ASQ Green Belt (points to ASQ's Six Sigma catalog because no direct Green Belt page was found), PMI CAPM, PMI-CPMAI (points to PMI's CPMAI FAQ page), PMI PMP. The IASSC link goes to its home page; no certification-level page was found.
 - [ ] **Careers page copies the quiz's data** (careers.html): the 12 family cards and the certification table were generated from quiz/js/data.js and are plain HTML. If Felix changes data.js, update careers.html too. The automated test fails when they differ.
 - [ ] **Quiz font and header changed** (quiz/index.html): the quiz now uses the site's Inter font and the site's navbar and footer, not its own Plus Jakarta Sans and header. Felix's files are unchanged apart from quiz/index.html (diff in docs/quiz-changes.diff).
 - [ ] **Quiz needs JavaScript**: without it, the quiz page shows a notice and the Careers page still lists everything. Decide after the Nov 24 meeting whether to keep the copy in quiz/ or only link to the live version.
 - [ ] **Credit wording**: "Career Fit Quiz built by Felix Gross" appears on careers.html and in the quiz page. Confirm Felix is happy with the wording and with the site using his quiz copy.
+
+## Added in Stage 5
+
+- [ ] **Past events photo gallery** (events.html): not built. An HTML comment marks the spot. It needs real photos from past events, with permission from the people in them.
+- [ ] **Real Spring 2027 events** (events.html, index.html carousel): the six events, their months, and the "Who it's for" values are a labeled sample. In particular, which events are "Open to all students" and which are "Members" was chosen for the demo, not supplied by the club. Replace the rows, cards and modals, and remove the "Sample" alert and badges, when the club confirms its calendar.
+- [ ] **How RSVPs really work** (events.html): the RSVP modal says the club posts RSVP links on LinkedIn and by email. That wording comes from the project brief; confirm it matches what the club does.
+- [ ] **Event descriptions** (events.html): the "what you walk away with" lines are general and written for the sample events, based on the club's stated perks. Review the wording.

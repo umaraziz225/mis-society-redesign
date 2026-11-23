@@ -33,6 +33,8 @@
   --bs-body-color: var(--text);
   --bs-body-font-family: var(--font);
   --bs-link-color: var(--primary);
+  --bs-link-color-rgb: 11, 95, 176;        /* Bootstrap colors links with the -rgb variables, so these two are what actually apply */
+  --bs-link-hover-color-rgb: 0, 45, 114;
   --bs-link-hover-color: var(--primary-dark);
   --bs-border-radius: var(--radius-sm);
 }
@@ -295,3 +297,19 @@ html:not(.js) .accordion-button::after { display: none; }
 /* The scrolling table must be a positioned box, or the absolutely positioned "(opens in new tab)" text inside it
    escapes the scroll area and makes the whole page scroll sideways on phones. */
 .table-wrap .table-responsive { position: relative; }
+
+/* ===== Events ===== */
+/* Event type badges. Each pairing passes 4.5:1: white on navy 13.0, white on blue 6.4, navy on amber 6.5, white on green 6.2 */
+.badge-type-speaker { background: var(--primary-dark); color: #fff; }
+.badge-type-workshop { background: var(--primary); color: #fff; }
+.badge-type-company-visit { background: var(--accent); color: var(--primary-dark); }
+.badge-type-social { background: #1B6E4F; color: #fff; }
+.event-facts { list-style: none; padding: 0; margin: 0 0 var(--space-3); color: var(--text-muted); font-size: .98rem; }
+.event-facts li { margin-bottom: .3rem; }
+.event-facts i { color: var(--primary); margin-right: .35rem; }
+.events-table { min-width: 44rem; }   /* narrower than this the table scrolls sideways inside its wrapper */
+.events-table tbody th { color: var(--primary-dark); }
+.sample-alert { --bs-alert-bg: #E3EEFA; --bs-alert-color: var(--primary-dark); --bs-alert-border-color: var(--border); margin-bottom: var(--space-4); }   /* navy on light blue 11.0:1 */
+.sample-alert .bi { color: var(--primary); }
+/* Buttons that open modals need JavaScript: hide them when it is off (the table and cards still show everything) */
+html:not(.js) .js-only { display: none; }
