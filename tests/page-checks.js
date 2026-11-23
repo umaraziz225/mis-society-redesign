@@ -1,6 +1,6 @@
 // Page-specific interactive checks. Add entries as each stage is built.
 // Shape: { "page.html": [ ["check name", async (page, ctx) => <"" to pass, a reason string to fail>], ... ] }
-// Still to add: careers/quiz end to end; events.html modal open/close with keyboard
+// Still to add: events.html modal open/close with keyboard
 // and focus return; join.html validation + demo alert.
 
 const activeSlide = page => page.evaluate(() => [...document.querySelectorAll("#eventsCarousel .carousel-item")].findIndex(i => i.classList.contains("active")));
@@ -8,6 +8,7 @@ const settle = page => page.waitForFunction(() => !document.querySelector("#even
 
 module.exports = {
   "resources.html": require("./checks-resources"),
+  ...require("./checks-careers"),
   "index.html": [
     ["Home: hero buttons and teaser links go to the right pages", async page => {
       const want = { "Join the Society": "join.html", "Explore free tools": "resources.html" }, errs = [];

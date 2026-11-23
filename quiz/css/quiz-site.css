@@ -1,0 +1,39 @@
+/* quiz-site.css: makes Felix's quiz look like the rest of the MIS Society site.
+   Loaded LAST, after css/style.css (Felix's, unchanged) and ../css/style.css (the site's).
+   Strategy: Felix's stylesheet colors everything through variables, so we point those
+   variables at the site's palette instead of editing his file. Site buttons, cards,
+   badges, navbar and footer already win by load order. */
+
+:root {
+  --blue-900: var(--primary-dark);   /* headings, kbd keys: 13.0:1 on white */
+  --blue-700: #00479F;               /* hover states */
+  --blue-600: var(--primary);        /* links, progress bar, selected borders: 6.4:1 on white */
+  --blue-500: var(--primary);
+  --blue-100: #E3EEFA;
+  --blue-50: var(--light-bg);
+  --ink: var(--text);
+  --muted: var(--text-muted);        /* 7.5:1 on white */
+  --line: var(--border);
+}
+
+/* Felix's body gradient and the site's plain white background: use the site's */
+body { background: #fff; }
+
+/* Class-name collisions: Felix's .site-header / .site-footer styles still apply to the site's header and footer */
+.site-header { color: var(--text); }
+.site-footer { color: var(--on-dark); border-top: 0; background: var(--primary-dark); }
+
+/* Felix's credit strip (above the site footer) */
+.quiz-credit { background: var(--light-bg); border-top: 1px solid var(--border); color: var(--text-muted); }
+.quiz-credit a { color: var(--primary); font-weight: 600; }
+
+/* Quiz-only pieces in the site's look */
+.card { border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+.btn { border-radius: 999px; }
+.display-title, .question-text, .result-title { letter-spacing: -.015em; font-weight: 700; }
+.eyebrow { color: var(--primary); }
+.option-card { border-radius: var(--radius-sm); }
+.option-card:has(input:focus-visible) { outline: 3px solid var(--primary-dark); outline-offset: 2px; }   /* navy focus ring, 13.0:1 */
+.result-card { border-top-color: var(--accent); }
+.quiz-progress .progress-bar { background: var(--primary); }
+.last-result { border-radius: var(--radius-sm); }

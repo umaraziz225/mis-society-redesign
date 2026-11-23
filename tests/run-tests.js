@@ -12,7 +12,7 @@ const pageChecks = require("./page-checks");
 const ROOT = path.resolve(__dirname, "..");
 const SHOTS = path.join(__dirname, "screenshots");
 const WIDTHS = [375, 768, 1280];
-const SOFT_HOSTS = /linkedin\.com|instagram\.com|facebook\.com/; // block bots: warn, don't fail
+const SOFT_HOSTS = /linkedin\.com|instagram\.com|facebook\.com|asq\.org|pmi\.org/; // these block bots (403/999): warn, don't fail
 const NAV_ORDER = ["index.html", "resources.html", "careers.html", "events.html", "about.html", "join.html"];
 
 const results = []; // {page, mode, check, status: pass|fail|warn, detail}
@@ -57,7 +57,7 @@ function serve() {
 
 // ---------- in-page helpers (run inside the browser) ----------
 const inPage = {
-  headings: () => [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map(h => ({ level: +h.tagName[1], text: h.textContent.trim(), hasImg: !!h.querySelector("img[alt]:not([alt=''])") })),
+  headings: () => [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].filter(h => h.checkVisibility()).map(h => ({ level: +h.tagName[1], text: h.textContent.trim(), hasImg: !!h.querySelector("img[alt]:not([alt=''])") })),
   bodyText: () => document.body.innerText,
   imgsNoAlt: () => [...document.querySelectorAll("img")].filter(i => !i.hasAttribute("alt")).map(i => i.getAttribute("src")),
   unlabeled: () => [...document.querySelectorAll("input,select,textarea")].filter(el => {

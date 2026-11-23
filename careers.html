@@ -40,12 +40,435 @@
   <main id="main" tabindex="-1">
     <section class="page-header">
       <div class="container">
-        <h1>Careers</h1>
-        <p class="lead">See where an MIS degree can lead, which skills each path needs, and which one might fit you.</p>
+        <h1>MIS Careers</h1>
+        <p class="lead">See where an MIS degree can take you: 12 career families, the certifications worth knowing, and how to land an internship.</p>
       </div>
     </section>
     <hr class="divider-gradient">
-    <!-- Page content is added in later stages. -->
+
+    <!-- QUIZ CALL-OUT (id="quiz" is the target of the Home page links) -->
+    <section class="section" id="quiz" aria-labelledby="quiz-heading">
+      <div class="container">
+        <div class="card quiz-callout">
+          <div class="card-body p-4 p-md-5">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-8">
+                <p class="eyebrow">Career Fit Quiz</p>
+                <h2 id="quiz-heading">Not sure which path fits you?</h2>
+                <p>Rate real work tasks and pick between workplace scenarios. The quiz builds your work profile and matches it with the 12 career families below. Each match shows the job outlook and how AI is changing the work. It takes about 7 minutes, needs no sign-up, and your answers stay in your browser.</p>
+                <p class="small text-muted-2 mb-0">Career Fit Quiz built by Felix Gross. <a href="https://felixdoesmis-csusm.github.io/mis-career-quiz/" target="_blank" rel="noopener">Open the original live version<span class="visually-hidden"> (opens in new tab)</span></a> if this copy does not load.</p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <a class="btn btn-primary btn-lg" href="quiz/index.html">Take the Career Fit Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 CAREER FAMILIES. Names, short descriptions and entry-level titles come from quiz/js/data.js (FAMILIES).
+         If Felix changes data.js, update these cards to match; the automated test compares them. Pay and growth numbers
+         are not repeated here: the quiz results show them with their BLS sources. -->
+    <section class="section section-alt" aria-labelledby="families-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Where MIS leads</p>
+          <h2 id="families-heading">12 career families</h2>
+          <p>Each family groups jobs that use similar skills. Start with the entry-level titles to see what to search for.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="process">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-diagram-2"></i></span>
+                <h3 class="card-title h5">Process Improvement &amp; Operational Excellence</h3>
+                <p class="family-tagline">Finding the waste in how work gets done, and fixing it.</p>
+                <p>You map how work actually flows, find the delays and errors, fix the root cause, and measure whether it improved. In MIS this usually means processes that run on software, data and automation.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Process Analyst Intern</li>
+                  <li>Continuous Improvement Intern</li>
+                  <li>Operations Improvement Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="analysis">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-clipboard-check"></i></span>
+                <h3 class="card-title h5">Business Analysis &amp; Requirements</h3>
+                <p class="family-tagline">Making sure the right thing gets built.</p>
+                <p>Business analysts figure out what a business actually needs and turn it into clear requirements, user stories and acceptance criteria a tech team can build and test against.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Business Analyst Intern</li>
+                  <li>IT Business Analyst</li>
+                  <li>QA / User Acceptance Testing Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="systems">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-gear-wide-connected"></i></span>
+                <h3 class="card-title h5">Business Systems &amp; Enterprise Applications</h3>
+                <p class="family-tagline">Running the software a whole company depends on.</p>
+                <p>You configure, connect and improve business platforms like ERP (company-wide operations), CRM (sales and customers) and HR systems, then help roll out changes so people actually use them.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Business Systems Analyst Intern</li>
+                  <li>ERP or CRM Analyst</li>
+                  <li>Implementation Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="automation">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-robot"></i></span>
+                <h3 class="card-title h5">Intelligent Automation &amp; Applied AI</h3>
+                <p class="family-tagline">Taking repetitive work off people's plates.</p>
+                <p>You find work that can be automated, then build it with low-code tools, scripts or AI workflows, with the right controls and human oversight. This is about deploying AI in a business, not researching AI models.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Automation Analyst Intern</li>
+                  <li>Power Platform Intern</li>
+                  <li>RPA (robotic process automation) Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="analytics">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span>
+                <h3 class="card-title h5">Data Analytics &amp; Business Intelligence</h3>
+                <p class="family-tagline">Turning messy numbers into decisions.</p>
+                <p>You clean, explore and visualize data so leaders can see what's happening and why. BI (business intelligence) work centers on dashboards and the metrics a business runs on.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Data Analyst Intern</li>
+                  <li>BI Intern</li>
+                  <li>Reporting Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="datagov">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-database-lock"></i></span>
+                <h3 class="card-title h5">Data Governance &amp; Information Management</h3>
+                <p class="family-tagline">Making sure data can be trusted.</p>
+                <p>You define what data means, who owns it, who may use it, and how its quality is checked. Data governance sits between the business and the database teams, and AI makes it more important.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Data Quality Analyst</li>
+                  <li>Data Steward</li>
+                  <li>Data Governance Intern</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="grc">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+                <h3 class="card-title h5">Governance, Risk, Compliance &amp; AI Governance</h3>
+                <p class="family-tagline">Proving that systems are safe, fair and following the rules.</p>
+                <p>GRC (governance, risk and compliance) professionals assess technology risk, test controls, gather audit evidence, and make sure the organization meets laws and standards. A fast-growing part of this is governing how AI is used.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>IT Audit Intern</li>
+                  <li>GRC Analyst Intern</li>
+                  <li>Technology Risk Intern</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="cyber">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-shield-lock"></i></span>
+                <h3 class="card-title h5">Cybersecurity Operations &amp; Identity</h3>
+                <p class="family-tagline">Defending systems in real time.</p>
+                <p>You monitor for threats, investigate alerts, manage who can log in to what (identity and access management, or IAM), and respond to incidents. It's more hands-on and technical than GRC.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Security Operations Center (SOC) Intern</li>
+                  <li>IAM Intern</li>
+                  <li>Cybersecurity Intern</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="delivery">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-kanban"></i></span>
+                <h3 class="card-title h5">IT Project, Program &amp; Product Delivery</h3>
+                <p class="family-tagline">Getting the right people to ship the right thing on time.</p>
+                <p>You plan the work, coordinate teams, manage risks and keep stakeholders informed. Some roles focus on delivering projects on time; product roles focus on deciding what gets built and why.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>IT Project Coordinator</li>
+                  <li>Project Management Office (PMO) Intern</li>
+                  <li>Product Operations Intern</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="ux">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-vector-pen"></i></span>
+                <h3 class="card-title h5">UX Research &amp; Service Design</h3>
+                <p class="family-tagline">Making technology work for the people using it.</p>
+                <p>You study how people actually use a service, map their journey, test designs, and push for changes that make systems easier and more accessible. In MIS this focuses on research and service redesign more than visual design.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>UX Research Intern</li>
+                  <li>Service Design Intern</li>
+                  <li>Digital Experience Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="infra">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-hdd-network"></i></span>
+                <h3 class="card-title h5">IT Operations, Cloud &amp; Infrastructure</h3>
+                <p class="family-tagline">Keeping the systems everyone depends on running.</p>
+                <p>You run and support the networks, devices, accounts and cloud services a company runs on. Many careers start in IT support and grow into systems, cloud or platform roles.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>IT Operations Intern</li>
+                  <li>Cloud Operations Intern</li>
+                  <li>Service Desk Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-hover h-100 family-card" data-family="strategy">
+              <div class="card-body">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-compass"></i></span>
+                <h3 class="card-title h5">Tech Consulting, Strategy &amp; Architecture</h3>
+                <p class="family-tagline">Helping organizations decide what technology to invest in.</p>
+                <p>You diagnose business problems, compare options, build the business case, and design how systems should fit together. Many people start in analyst or consulting roles; architect titles usually come later.</p>
+                <p class="small fw-semibold mb-1">Entry-level titles</p>
+                <ul class="entry-titles">
+                  <li>Technology Consulting Intern</li>
+                  <li>IT Advisory Intern</li>
+                  <li>Vendor Management Analyst</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS. Only certifications named in quiz/js/data.js. Vendor links checked November 22, 2026. -->
+    <section class="section" aria-labelledby="certs-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Optional extras</p>
+          <h2 id="certs-heading">Certifications worth knowing</h2>
+          <p>A certification is not required for most entry-level roles. These are the ones the quiz mentions for each family. Links go to the official vendor pages.</p>
+        </div>
+        <div class="table-wrap">
+          <div class="table-responsive">
+            <table class="table table-striped align-top cert-table">
+              <caption class="visually-hidden">Certifications by career family</caption>
+              <thead>
+                <tr><th scope="col">Career family</th><th scope="col">Good to start with</th><th scope="col">Later in your career</th></tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">Process Improvement &amp; Operational Excellence</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.asq.org/cert/six-sigma-yellow-belt" target="_blank" rel="noopener">ASQ Six Sigma Yellow Belt<span class="visually-hidden"> (opens in new tab)</span></a> (no prerequisites)</li>
+                  <li><a href="https://iassc.org/" target="_blank" rel="noopener">IASSC Lean Six Sigma<span class="visually-hidden"> (opens in new tab)</span></a> Yellow or Green Belt (no prerequisites)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.asq.org/cert/catalog/six-sigma" target="_blank" rel="noopener">ASQ Six Sigma Green Belt<span class="visually-hidden"> (opens in new tab)</span></a> (requires 3 years of work experience)</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Business Analysis &amp; Requirements</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.iiba.org/business-analysis-certifications/ecba/" target="_blank" rel="noopener">IIBA ECBA<span class="visually-hidden"> (opens in new tab)</span></a>, Entry Certificate in Business Analysis (exam updated July 2025)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.iiba.org/business-analysis-certifications/ccba/" target="_blank" rel="noopener">IIBA CCBA<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                  <li><a href="https://www.iiba.org/business-analysis-certifications/cbap/" target="_blank" rel="noopener">IIBA CBAP<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Business Systems &amp; Enterprise Applications</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/" target="_blank" rel="noopener">Microsoft PL-900<span class="visually-hidden"> (opens in new tab)</span></a> (Power Platform Fundamentals)</li>
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener">Microsoft AB-900<span class="visually-hidden"> (opens in new tab)</span></a> (Copilot and Agent Administration Fundamentals; replaced MS-900, retired March 2026)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li>Microsoft AB-series and Power Platform associate exams</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Intelligent Automation &amp; Applied AI</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/" target="_blank" rel="noopener">Microsoft PL-900<span class="visually-hidden"> (opens in new tab)</span></a> (Power Platform Fundamentals)</li>
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener">Microsoft AB-900<span class="visually-hidden"> (opens in new tab)</span></a> (Copilot and Agent Administration Fundamentals)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li>Microsoft AB-series associate exams for building AI agents</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Data Analytics &amp; Business Intelligence</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/" target="_blank" rel="noopener">Microsoft PL-300<span class="visually-hidden"> (opens in new tab)</span></a> (Power BI Data Analyst; updated April 2026 to include Copilot in Power BI)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/" target="_blank" rel="noopener">Microsoft DP-600<span class="visually-hidden"> (opens in new tab)</span></a> (Fabric Analytics Engineer)</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Data Governance &amp; Information Management</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/" target="_blank" rel="noopener">Microsoft PL-300<span class="visually-hidden"> (opens in new tab)</span></a> (covers data modeling and security basics)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li>Credentials vary by employer; ask professionals at MIS Society events</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Governance, Risk, Compliance &amp; AI Governance</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.comptia.org/en-us/certifications/security/" target="_blank" rel="noopener">CompTIA Security+<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                  <li><a href="https://iapp.org/certify/aigp/" target="_blank" rel="noopener">IAPP AIGP<span class="visually-hidden"> (opens in new tab)</span></a>, Artificial Intelligence Governance Professional (no prerequisites)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.isaca.org/credentialing/cisa" target="_blank" rel="noopener">ISACA CISA<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                  <li><a href="https://www.isaca.org/credentialing/aaia" target="_blank" rel="noopener">ISACA AAIA<span class="visually-hidden"> (opens in new tab)</span></a> (AI audit; requires CISA or a similar audit credential)</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Cybersecurity Operations &amp; Identity</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.comptia.org/en-us/certifications/security/" target="_blank" rel="noopener">CompTIA Security+<span class="visually-hidden"> (opens in new tab)</span></a> (new version, SY0-801, launches around November 17, 2026)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.comptia.org/en-us/certifications/secai/" target="_blank" rel="noopener">CompTIA SecAI+<span class="visually-hidden"> (opens in new tab)</span></a> (launched February 2026; 3-4 years of IT experience recommended)</li>
+                  <li><a href="https://www.isaca.org/credentialing/aaism" target="_blank" rel="noopener">ISACA AAISM<span class="visually-hidden"> (opens in new tab)</span></a> (requires CISM or CISSP)</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">IT Project, Program &amp; Product Delivery</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.pmi.org/certifications/certified-associate-capm" target="_blank" rel="noopener">PMI CAPM<span class="visually-hidden"> (opens in new tab)</span></a> (Certified Associate in Project Management)</li>
+                  <li><a href="https://www.pmi.org/certifications/certification-resources/cpmai-faq" target="_blank" rel="noopener">PMI-CPMAI<span class="visually-hidden"> (opens in new tab)</span></a>, for managing AI projects (no experience required)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.pmi.org/certifications/project-management-pmp" target="_blank" rel="noopener">PMI PMP<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">UX Research &amp; Service Design</th>
+                <td><ul class="cert-list">
+                  <li>No standard certification; a portfolio of real usability studies matters most</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li>Specialized UX courses and portfolios</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">IT Operations, Cloud &amp; Infrastructure</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.comptia.org/en-us/certifications/a/" target="_blank" rel="noopener">CompTIA A+<span class="visually-hidden"> (opens in new tab)</span></a> or <a href="https://www.comptia.org/en-us/certifications/network/" target="_blank" rel="noopener">Network+<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/copilot-and-agent-administration-fundamentals/" target="_blank" rel="noopener">Microsoft AB-900<span class="visually-hidden"> (opens in new tab)</span></a> (Microsoft 365 Copilot and Agent Administration Fundamentals)</li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li>Azure or AWS associate-level cloud certifications</li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th scope="row">Tech Consulting, Strategy &amp; Architecture</th>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.iiba.org/business-analysis-certifications/ecba/" target="_blank" rel="noopener">IIBA ECBA<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                  <li><a href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/" target="_blank" rel="noopener">Microsoft PL-900<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                </ul></td>
+                <td><ul class="cert-list">
+                  <li><a href="https://www.pmi.org/certifications/project-management-pmp" target="_blank" rel="noopener">PMI PMP<span class="visually-hidden"> (opens in new tab)</span></a></li>
+                  <li>Cloud architect certifications (AWS or Azure)</li>
+                </ul></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="small text-muted-2 mt-3 mb-0">Certification details checked by the quiz's author in November 2026. Fees, prerequisites and exam versions change, so confirm them on the vendor's page before you register.</p>
+      </div>
+    </section>
+
+    <!-- INTERNSHIP TIPS. Career Center facts come from its home page (csusm.edu/careers), checked November 22, 2026. No statistics. -->
+    <section class="section section-alt" aria-labelledby="intern-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Next step</p>
+          <h2 id="intern-heading">Landing an internship</h2>
+          <p>Five practical steps you can start this week.</p>
+        </div>
+        <div class="accordion" id="internshipTips">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tip1" aria-expanded="true" aria-controls="tip1">Build a one-page resume early</button>
+            </h3>
+            <div id="tip1" class="accordion-collapse collapse show" data-bs-parent="#internshipTips">
+              <div class="accordion-body"><p>List your classes, team projects, and the tools you have used, such as Excel, SQL, or Power BI. Keep it to one page and use plain words.</p><p class="mb-0">Then get a second opinion. The CSUSM Career Center says its Handshake service offers resume and cover letter critiques. <a href="https://www.csusm.edu/careers/index.html" target="_blank" rel="noopener">Visit the Career Center<span class="visually-hidden"> (opens in new tab)</span></a>.</p></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip2" aria-expanded="false" aria-controls="tip2">Set up your LinkedIn profile</button>
+            </h3>
+            <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#internshipTips">
+              <div class="accordion-body"><p>Add a clear photo, a short headline that says what you study, and the projects and tools you have worked with. Then connect with classmates, guest speakers, and alumni.</p><p class="mb-0">The Career Center lists free headshots on its home page, so ask about them before you pay for a photo.</p></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip3" aria-expanded="false" aria-controls="tip3">Use Handshake and the Career Center</button>
+            </h3>
+            <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#internshipTips">
+              <div class="accordion-body"><p>The Career Center says Handshake is where you can make appointments, search for jobs, and RSVP for events. It also lists career counseling, mentorship, and internship information for students.</p><p class="mb-0"><a href="https://www.csusm.edu/careers/index.html" target="_blank" rel="noopener">Start at the Career Center home page<span class="visually-hidden"> (opens in new tab)</span></a>.</p></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip4" aria-expanded="false" aria-controls="tip4">Talk to people who do the job</button>
+            </h3>
+            <div id="tip4" class="accordion-collapse collapse" data-bs-parent="#internshipTips">
+              <div class="accordion-body"><p>Ask a professional for a short chat about their work. Ask what they do in a normal week, which skills matter most, and how they got started. Say thank you afterward.</p><p class="mb-0">Not sure whom to ask about? Take the Career Fit Quiz above, then pick two or three career families from your results.</p></div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip5" aria-expanded="false" aria-controls="tip5">Let the MIS Society help</button>
+            </h3>
+            <div id="tip5" class="accordion-collapse collapse" data-bs-parent="#internshipTips">
+              <div class="accordion-body"><p>The club brings in guest speakers for real Q&amp;A, not just presentations. It also helps with internship prep, including your resume, LinkedIn, interviews, and recruiting strategy.</p><p class="mb-0"><a href="join.html">See how to join the Society</a>.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

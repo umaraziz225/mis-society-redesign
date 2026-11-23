@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Career Fit Quiz | MIS Society at CSUSM</title>
+  <meta name="description" content="A career exploration quiz that matches business and MIS students with 12 Information Systems career families, with 2025-35 outlook and AI notes.">
+
+  <link rel="icon" href="../images/mis-society-logo-sm.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+  <!-- Felix's stylesheet first (unchanged), then the site's, then quiz-site.css, which maps his colors onto the site's -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/quiz-site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Main">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"><img src="../images/mis-society-logo-sm.png" alt="" width="120" height="107"> MIS Society</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../resources.html">Student Toolkit</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="true" href="../careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="../events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-join" href="../join.html">Join</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1" class="container py-4 py-md-5">
+
+    <!-- ================= START ================= -->
+    <section id="view-start" class="view" aria-labelledby="start-title">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-xl-8">
+          <div class="card hero-card">
+            <div class="card-body p-4 p-md-5">
+              <p class="eyebrow">Career Fit Quiz</p>
+              <h1 id="start-title" class="display-title">Where do you fit in Information Systems?</h1>
+              <p class="lead-text">
+                MIS leads to a lot of different careers. This quiz asks how you feel about real tasks, builds your
+                <strong>work profile</strong>, and matches it with <strong>12 career families</strong>, including each one's job outlook and how AI is changing it.
+              </p>
+
+              <noscript><div class="alert alert-warning mt-3">This quiz needs JavaScript. Turn it on in your browser and reload the page. You can still read about every career family on the <a href="../careers.html">Careers page</a>.</div></noscript>
+
+              <div id="last-result" class="alert alert-info last-result" hidden></div>
+
+              <ol class="parts-list">
+                <li><span><strong>Part A:</strong> rate 20 tasks</span> <span class="part-time">about 3 min</span></li>
+                <li><span><strong>Part B:</strong> 6 workplace scenarios</span> <span class="part-time">about 3 min</span></li>
+                <li><span><strong>Part C:</strong> 5 work-style questions</span> <span class="part-time">1 min</span></li>
+                <li><span><strong>Part D:</strong> what you've tried so far</span> <span class="part-time">optional</span></li>
+              </ol>
+
+              <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+                <button id="btn-start" class="btn btn-primary btn-lg px-4" type="button">Start the quiz &rarr;</button>
+                <span class="text-muted small">No sign-up. Your answers never leave your browser.</span>
+              </div>
+
+              <h2 class="paths-heading">Career families you could match</h2>
+              <div id="family-chips" class="path-chips"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section id="view-quiz" class="view" hidden aria-label="Quiz">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <div class="d-flex justify-content-between small fw-semibold mb-2">
+            <span id="part-label"></span>
+            <span id="progress-pct" class="text-muted"></span>
+          </div>
+          <div class="progress quiz-progress" role="progressbar" aria-label="Quiz progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+          </div>
+
+          <div class="card question-card mt-4">
+            <div class="card-body p-4 p-md-5">
+              <p id="step-kicker" class="step-kicker"></p>
+              <!-- html-validate-disable-next empty-heading -- app.js fills this heading with the question text -->
+              <h2 id="step-title" class="question-text" tabindex="-1"></h2>
+              <p id="step-sub" class="step-sub"></p>
+              <div id="step-body"></div>
+
+              <div class="d-flex justify-content-between align-items-center mt-4 gap-2">
+                <button id="btn-back" class="btn btn-outline-primary" type="button">&larr; Back</button>
+                <div class="d-flex gap-2">
+                  <button id="btn-skip" class="btn btn-link" type="button" hidden>Skip</button>
+                  <button id="btn-next" class="btn btn-primary px-4" type="button" disabled>Next &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p id="key-tip" class="text-center text-muted small mt-3 d-none d-md-block"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULTS ================= -->
+    <section id="view-results" class="view" hidden aria-labelledby="results-title">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+          <p class="eyebrow text-center">Your results</p>
+          <h1 id="results-title" class="results-title text-center">Your strongest career matches</h1>
+          <p class="text-center text-muted mb-4">Based on what you enjoy, not on ability. Use it to decide what to explore next.</p>
+
+          <div id="confidence-note" class="alert alert-warning" hidden></div>
+          <div id="tie-note" class="alert alert-primary" hidden></div>
+
+          <div id="cards"></div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="card-body p-4">
+                  <h2 class="section-title">Your work profile</h2>
+                  <p class="small text-muted">How much each kind of work appealed to you, strongest first.</p>
+                  <div id="profile"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="card-body p-4">
+                  <h2 class="section-title">All 12 families</h2>
+                  <div id="all-families"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <details class="method card mt-4">
+            <summary class="p-4">How this quiz works</summary>
+            <div class="px-4 pb-4" id="method-text"></div>
+          </details>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <button id="btn-copy" class="btn btn-primary" type="button">Copy my results</button>
+            <button id="btn-print" class="btn btn-outline-primary" type="button">Print or save as PDF</button>
+            <button id="btn-retake" class="btn btn-outline-primary" type="button">Retake the quiz</button>
+          </div>
+          <p id="copy-status" class="text-center small mt-2" aria-live="polite"></p>
+          <textarea id="copy-fallback" class="form-control mt-2" rows="10" hidden aria-label="Your results as text"></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="quiz-credit" aria-label="Quiz credit and sources">
+    <div class="container py-4 small text-center">
+      Career Fit Quiz built by <strong>Felix Gross</strong>. <a href="https://felixdoesmis-csusm.github.io/mis-career-quiz/" target="_blank" rel="noopener">Open the original live version<span class="visually-hidden"> (opens in new tab)</span></a><br>
+      MIS Career Fit Quiz v<span id="version"></span> &middot; Outlook and certification facts checked <span id="checked"></span><br>
+      Job outlook from the U.S. Bureau of Labor Statistics, 2025&ndash;35 projections. An exploration aid, not a test of ability.
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="../index.html"><img src="../images/mis-society-logo-sm.png" alt="" width="120" height="107"> MIS Society</a>
+          <p class="mt-3 mb-0">Connecting, collaborating, and engaging.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../resources.html">Student Toolkit</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../events.html">Events</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../join.html">Join</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2>Connect</h2>
+          <ul>
+            <li><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a></li>
+            <li><i class="bi bi-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/mis-society-203880251/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a></li>
+            <!-- NEEDS CONTENT: real Instagram URL for the club (logged in MISSING_CONTENT.md) -->
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h2>CSUSM</h2>
+          <ul>
+            <li><a href="https://www.csusm.edu/coba/" target="_blank" rel="noopener">College of Business Administration<span class="visually-hidden"> (opens in new tab)</span></a></li>
+            <li><a href="https://www.csusm.edu/mis/index.html" target="_blank" rel="noopener">MIS program<span class="visually-hidden"> (opens in new tab)</span></a></li>
+          </ul>
+          <address class="mt-3 mb-0">CSU San Marcos<br>333 S. Twin Oaks Valley Rd.<br>San Marcos, CA 92096</address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-1">Student-built mock redesign for MIS 410, Fall 2026, CSU San Marcos.</p>
+        <p class="mb-0">Last updated: November 2026 &middot; &copy; <span data-year>2026</span> CSUSM MIS Society</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

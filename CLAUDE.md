@@ -67,16 +67,16 @@ Six pages share one navbar and one footer.
 
 ## 6. Verified content: Student Toolkit
 
-Checked November 2026. Link to the official page on every card and show a "last checked" date. Re-check links the week before Dec 8.
+Re-verified 11/22 against each official page. Link to the official page on every card and show a "last checked" date. Re-check links the week before Dec 8.
 
-| Tool | What students get | How to get it | Official source |
+| Tool | What students get (as the official page says now) | How to get it | Official source |
 |---|---|---|---|
-| ChatGPT Edu | CSU-licensed ChatGPT, higher limits, chats not used for training. Optional sign-up. | Sign in with campus credentials, choose "San Marcos". | https://www.csusm.edu/iits/iitsforyou/generativeai/chatgpt/index.html |
-| Microsoft 365 + Copilot | Word, Excel, PowerPoint, Outlook, Teams, OneDrive, Copilot in the apps; installable on personal devices; access ends when you leave CSUSM | office.com with CSUSM email (drop "cougars" from the address) | https://csusm.edu/iits/iitsforyou/office365/download-msoffice/index.html |
-| Adobe Creative Cloud | Photoshop, Illustrator, Premiere, etc., free | CSUSM redemption steps | https://www.csusm.edu/iits/iitsforyou/adobe/download-adobe/index.html |
-| MIS-relevant software | SPSS, Visio, SQL Developer, SAP Logon, R Studio, StarUML, Minitab | Cougar Apps or personal download | https://www.csusm.edu/iits/iitsforyou/software/index.html |
-| Azure for Students | $100 Azure credit for 12 months, free services, no credit card, renewable yearly | Sign up with CSUSM email | https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p/ |
-| GitHub Student Developer Pack | GitHub Pro, GitHub Copilot, partner tools | Apply and verify at education.github.com | https://education.github.com/pack |
+| ChatGPT Edu | CSU-wide ChatGPT Edu license with more powerful tools and enhanced privacy; chats are not used to train OpenAI's models. Optional sign-up. Since Sept 1, 2026 it has usage limits on most features, and CSUSM cannot reset them; Microsoft Copilot can be used in most cases without limits. | Request a license with the CSUSM form, open the invite email and select "Join Workspace" (or log in, not sign up), choose "San Marcos", use your campus username and password. | https://www.csusm.edu/iits/iitsforyou/generativeai/chatgpt/index.html |
+| Microsoft 365 | Microsoft 365 for all active CSUSM students: Office apps in the browser, OneDrive cloud storage, installable on personal devices; access ends when you leave CSUSM (back up first). The page does not mention Copilot inside the apps. | Office.com with your campus username and password; install guides on the CSUSM page. (The "drop cougars" tip is not on the page.) | https://csusm.edu/iits/iitsforyou/office365/download-msoffice/index.html |
+| Adobe Creative Cloud | Free for currently enrolled students on campus and home computers: Photoshop, Illustrator, Premiere Pro, and more. Access lasts while you are enrolled. | CSUSM redemption codes; steps are on the CSUSM page. | https://www.csusm.edu/iits/iitsforyou/adobe/download-adobe/index.html |
+| MIS-relevant software | Listed for students on the CSUSM software page: SPSS, Visio, SQL Developer, SAP Logon, R and R Studio, StarUML, Minitab | Cougar Apps, or a personal-device download where the list shows one | https://www.csusm.edu/iits/iitsforyou/software/index.html |
+| Azure for Students | $100 credit to use within 12 months, select free services, no credit card. Unused credit does not carry over. Must be 18+ and a full-time student at an accredited, degree-granting school. (No "renewable yearly" on the page.) | Apply on the Azure page and verify with your school email | https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p/ |
+| GitHub Student Developer Pack | Free GitHub Pro while you are a student, partner offers, and GitHub Copilot Student for verified students (unlimited code completions, limited chat and agent use) | Sign up and verify at education.github.com | https://education.github.com/pack |
 
 **Not yet verified, don't publish until checked:** LinkedIn Learning access, Tableau for Students, Microsoft exam discounts, Career Center tools (Handshake, resume review), Library resources (O'Reilly, etc.).
 

@@ -239,7 +239,7 @@ main:focus { outline: none; }   /* main is focus target of the skip link only */
 @media (max-width: 575.98px) { .event-slide { padding: var(--space-4) 3.25rem 3.5rem; } }
 
 /* Career quiz call-out band */
-.band { padding: var(--space-5) 0; }
+.site-band { padding: var(--space-5) 0; }   /* not ".band": the quiz uses that name for its match badge */
 .band-quiz { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; }   /* white on blue end: 6.4:1 */
 .band-quiz h2 { color: #fff; }
 /* Narrow controls so the arrows sit in the slide's side padding, not on the text */
@@ -279,3 +279,19 @@ html:not(.js) .tool-steps.collapse { display: block; }
 .resource-list li { padding: .55rem 0; border-bottom: 1px solid var(--border); }
 .resource-list li:last-child { border-bottom: 0; }
 .resource-list a { font-weight: 600; }
+
+/* ===== Careers ===== */
+.quiz-callout { border-top: 6px solid var(--accent); }
+.family-card .family-tagline { color: var(--primary-dark); font-weight: 600; margin-bottom: var(--space-2); }
+.entry-titles { padding-left: 1.1rem; margin-bottom: 0; font-size: .98rem; }
+.cert-table th, .cert-table td { vertical-align: top; }
+.cert-table tbody th { min-width: 12rem; color: var(--primary-dark); }
+.cert-table td { min-width: 15rem; }
+.cert-list { list-style: none; padding: 0; margin: 0; }
+.cert-list li { padding: .25rem 0; font-size: .98rem; }
+/* Accordion: without JS every tip stays open (Bootstrap's collapse needs JS) */
+html:not(.js) .accordion-collapse.collapse { display: block; }
+html:not(.js) .accordion-button::after { display: none; }
+/* The scrolling table must be a positioned box, or the absolutely positioned "(opens in new tab)" text inside it
+   escapes the scroll area and makes the whole page scroll sideways on phones. */
+.table-wrap .table-responsive { position: relative; }
