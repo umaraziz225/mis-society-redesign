@@ -1,6 +1,7 @@
 // Interactive checks for events.html. Merged into page-checks.js.
 const fs = require("fs"), path = require("path");
-const ROOT = path.resolve(__dirname, "..");
+// SITE_ROOT lets the suite test any copy of the site (for example the unzipped submission)
+const ROOT = process.env.SITE_ROOT ? path.resolve(process.env.SITE_ROOT) : path.resolve(__dirname, "..");
 
 const EVENTS = [
   ["spring-kickoff", "Spring Kickoff & Info Night", "Social", "Late January 2027"],

@@ -1,6 +1,7 @@
 // Interactive checks for join.html. Merged into page-checks.js.
 const fs = require("fs"), path = require("path");
-const ROOT = path.resolve(__dirname, "..");
+// SITE_ROOT lets the suite test any copy of the site (for example the unzipped submission)
+const ROOT = process.env.SITE_ROOT ? path.resolve(process.env.SITE_ROOT) : path.resolve(__dirname, "..");
 
 const DEMO = "This is a demo form for a class project. Nothing was sent. To join for real, email csusmmissociety@gmail.com.";
 const REGISTERED = /you('re| are| have been)? (now )?(registered|signed up|a member|in\b)|registration (complete|successful)|thank you for (joining|registering|signing)|welcome to the (society|club)|successfully|congratulations/i;

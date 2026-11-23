@@ -1,6 +1,7 @@
 // Checks for about.html. Merged into page-checks.js.
 const fs = require("fs"), path = require("path");
-const ROOT = path.resolve(__dirname, "..");
+// SITE_ROOT lets the suite test any copy of the site (for example the unzipped submission)
+const ROOT = process.env.SITE_ROOT ? path.resolve(process.env.SITE_ROOT) : path.resolve(__dirname, "..");
 const L = "https://www.linkedin.com/in/";
 
 // Exactly the officers on the current club site (checked Nov 22, 2026), in display order.

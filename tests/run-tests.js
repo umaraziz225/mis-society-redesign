@@ -9,7 +9,8 @@ const AxeBuilder = require("@axe-core/playwright").default;
 const { HtmlValidate } = require("html-validate");
 const pageChecks = require("./page-checks");
 
-const ROOT = path.resolve(__dirname, "..");
+// SITE_ROOT lets the suite test any copy of the site (for example the unzipped submission)
+const ROOT = process.env.SITE_ROOT ? path.resolve(process.env.SITE_ROOT) : path.resolve(__dirname, "..");
 const SHOTS = path.join(__dirname, "screenshots");
 const WIDTHS = [375, 768, 1280];
 const SOFT_HOSTS = /linkedin\.com|instagram\.com|facebook\.com|asq\.org|pmi\.org/; // these block bots (403/999): warn, don't fail

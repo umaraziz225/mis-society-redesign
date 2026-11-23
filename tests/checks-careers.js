@@ -1,6 +1,7 @@
 // Interactive checks for careers.html and quiz/index.html. Merged into page-checks.js.
 const fs = require("fs"), path = require("path"), vm = require("vm"), crypto = require("crypto");
-const ROOT = path.resolve(__dirname, "..");
+// SITE_ROOT lets the suite test any copy of the site (for example the unzipped submission)
+const ROOT = process.env.SITE_ROOT ? path.resolve(process.env.SITE_ROOT) : path.resolve(__dirname, "..");
 
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.join(ROOT, "quiz/js/data.js"), "utf8") + ";this.FAMILIES=FAMILIES;this.RATING_ITEMS=RATING_ITEMS;", ctx);
@@ -135,6 +136,7 @@ module.exports = {
       return errs.join("; ");
     }],
     ["Careers -> Quiz: take the quiz end to end from the Take-the-quiz button and see results", async (page, c) => {
+      await page.goto(c.url.split("#")[0], { waitUntil: "load" }); // start fresh: earlier checks leave this page scrolled and in other states
       await page.locator("section#quiz a.btn").click();
       await page.waitForURL(/quiz\/index\.html/);
       return takeQuiz(page);
