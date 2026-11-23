@@ -5,7 +5,8 @@
   "scripts": {
     "test": "node run-tests.js",
     "qa": "node ../scripts/qa-static.js && node ../scripts/validate-html.js && node ../scripts/check-links.js && node ../scripts/axe-report.js && node run-tests.js",
-    "qa:screenshots": "node ../scripts/screenshots.js"
+    "qa:screenshots": "node ../scripts/screenshots.js",
+    "test:live": "node run-tests.js"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

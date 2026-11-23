@@ -15,6 +15,19 @@ const WIDTHS = [375, 768, 1280];
 const SOFT_HOSTS = /linkedin\.com|instagram\.com|facebook\.com|asq\.org|pmi\.org/; // these block bots (403/999): warn, don't fail
 const NAV_ORDER = ["index.html", "resources.html", "careers.html", "events.html", "about.html", "join.html"];
 
+// Live mode: BASE_URL=https://user.github.io/repo npm test  tests only that site (no local file:// or server runs).
+const LIVE = (process.env.BASE_URL || "").replace(/\/+$/, "");
+
+// Windows and macOS ignore letter case in file names; GitHub Pages (Linux) does not. A link that works here can 404 there,
+// so existence is checked segment by segment with the exact case.
+function existsExact(abs) {
+  const rel = path.relative(ROOT, abs);
+  if (rel.startsWith("..") || path.isAbsolute(rel)) return fs.existsSync(abs);
+  let cur = ROOT;
+  for (const seg of rel.split(path.sep)) { if (!fs.existsSync(cur) || !fs.readdirSync(cur).includes(seg)) return false; cur = path.join(cur, seg); }
+  return true;
+}
+
 const results = []; // {page, mode, check, status: pass|fail|warn, detail}
 const rec = (page, mode, check, status, detail = "") => results.push({ page, mode, check, status, detail });
 async function check(page, mode, name, fn) {
@@ -48,7 +61,7 @@ function serve() {
       let p = decodeURIComponent(req.url.split("?")[0]);
       if (p.endsWith("/")) p += "index.html";
       const f = path.join(ROOT, p);
-      if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { rsp.writeHead(404); return rsp.end("not found"); }
+      if (!f.startsWith(ROOT) || !existsExact(f) || fs.statSync(f).isDirectory()) { rsp.writeHead(404); return rsp.end("not found"); }
       rsp.writeHead(200, { "Content-Type": MIME[path.extname(f)] || "application/octet-stream" });
       fs.createReadStream(f).pipe(rsp);
     }).listen(0, "127.0.0.1", () => res(s));
@@ -99,7 +112,7 @@ const inPage = {
 
 // ---------- per-mode checks ----------
 async function runPage(browser, file, mode, base) {
-  const url = mode === "file" ? pathToFileURL(path.join(ROOT, file)).href : `${base}/${file}`;
+  const url = mode === "file" ? pathToFileURL(path.join(ROOT, file)).href : mode === "live" ? `${LIVE}/${file}` : `${base}/${file}`;
   const P = file, M = mode;
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await ctx.newPage();
@@ -146,12 +159,28 @@ async function runPage(browser, file, mode, base) {
   await check(P, M, "Internal links and assets resolve", async () => {
     const refs = await page.evaluate(inPage.refs), ids = await page.evaluate(() => new Set([...document.querySelectorAll("[id]")].map(e => e.id)) && [...document.querySelectorAll("[id]")].map(e => e.id));
     const bad = [], warns = [];
+    if (mode === "live") { // ask the real server about every internal link, asset and #anchor
+      const seen = new Map();
+      for (const [, ref] of refs) {
+        if (!ref || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(ref)) continue;
+        if (ref.startsWith("#")) { if (ref.length > 1 && !ids.includes(ref.slice(1))) bad.push(ref); continue; }
+        const u = new URL(ref, url), key = u.origin + u.pathname;
+        if (!seen.has(key)) { const r = await fetch(key, { headers: { "User-Agent": "site-test" } }); seen.set(key, { status: r.status, body: /html/.test(r.headers.get("content-type") || "") ? await r.text() : "" }); }
+        const hit = seen.get(key);
+        if (hit.status !== 200) { bad.push(`${ref} -> HTTP ${hit.status}`); continue; }
+        if (u.hash.length > 1) {
+          const id = decodeURIComponent(u.hash.slice(1)).split('"').join(""), has = hit.body.includes(`id="${id}"`) || hit.body.includes(`id='${id}'`);
+          if (!has) bad.push(`${ref} (no element with that id on the live page)`);
+        }
+      }
+      return bad.length ? [...new Set(bad)].join(", ") : "";
+    }
     for (const [, ref] of refs) {
       if (!ref || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(ref)) continue;
       if (ref.startsWith("#")) { if (ref.length > 1 && !ids.includes(ref.slice(1))) bad.push(ref); continue; }
       if (ref.startsWith("/")) { bad.push(ref + " (absolute path; use relative)"); continue; }
       const f = path.resolve(path.dirname(path.join(ROOT, file)), decodeURIComponent(ref.split(/[?#]/)[0]));
-      if (!fs.existsSync(f)) { bad.push(ref); continue; }
+      if (!existsExact(f)) { bad.push(ref + (fs.existsSync(f) ? " (the file exists but the letter case differs: GitHub Pages is case-sensitive)" : "")); continue; }
       // page.html#anchor: the id must exist on the destination page (read from disk)
       const frag = ref.includes("#") ? decodeURIComponent(ref.split("#")[1]) : "";
       if (frag && f.endsWith(".html")) {
@@ -321,9 +350,12 @@ async function externalLinks(browser, files) {
   const base = `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch({ channel: "msedge", headless: true });
   try {
-    for (const f of files) for (const m of ["file", "http"]) await runPage(browser, f, m, base);
-    await onceChecks(files);
-    await externalLinks(browser, files);
+    if (LIVE) { for (const f of files) await runPage(browser, f, "live", base); }
+    else {
+      for (const f of files) for (const m of ["file", "http"]) await runPage(browser, f, m, base);
+      await onceChecks(files);
+      await externalLinks(browser, files);
+    }
   } finally { await browser.close(); server.close(); }
 
   // summary
@@ -333,9 +365,10 @@ async function externalLinks(browser, files) {
   const summary = ["| Check | Pass | Fail | Warn |", "|---|---|---|---|", ...rows, `| **Total** | **${total.pass}** | **${total.fail}** | **${total.warn}** |`].join("\n");
   const problems = results.filter(r => r.status !== "pass").map(r => `- [${r.status.toUpperCase()}] ${r.page} (${r.mode}) ${r.check}: ${r.detail}`);
   const report = `# Test report\n\nPages: ${files.join(", ")}\n\n${summary}\n\n## Failures and warnings\n\n${problems.join("\n") || "None."}\n\n## All results\n\n| Page | Mode | Check | Result |\n|---|---|---|---|\n${results.map(r => `| ${r.page} | ${r.mode} | ${r.check} | ${r.status} |`).join("\n")}\n`;
-  fs.writeFileSync(path.join(__dirname, "last-report.md"), report);
+  fs.writeFileSync(path.join(__dirname, LIVE ? "last-report-live.md" : "last-report.md"), report);
   console.log(`\n${summary}\n`);
   if (problems.length) console.log(problems.join("\n") + "\n");
-  console.log("Full report: tests/last-report.md   Screenshots: tests/screenshots/");
+  console.log(LIVE ? `Live site: ${LIVE}
+Full report: tests/last-report-live.md` : "Full report: tests/last-report.md   Screenshots: tests/screenshots/");
   process.exit(total.fail ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(2); });

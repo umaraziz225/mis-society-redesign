@@ -11,3 +11,4 @@ tests/last-report.md
 .claude/
 .env
 .env.*
+tests/last-report-live.md
