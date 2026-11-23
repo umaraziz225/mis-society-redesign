@@ -55,7 +55,7 @@ User-focused features (1 needed; there are 7): the Career Fit Quiz, Toolkit cate
 - **Only Microsoft Edge (Chromium) was used.** Not tried in Safari or Firefox, and not on a physical phone or with a real screen reader. The accessibility attributes are tested, but not heard.
 - **LinkedIn and PMI links** block scripts, so 16 links are only "warnings". Open the officer LinkedIn links and the three PMI certification links by hand once. ASQ links passed in the last run.
 - **Google Fonts** (Inter) loads from the internet. Offline, the site falls back to the system font and everything still works.
-- **Every image has `alt=""`.** The only images are the club logo, which always sits beside the words "MIS Society" (or the page's h1), so it is decorative. A grader looking for descriptive alt text on photos will find none because there are no photos yet.
+- **Alt text:** the Home hero logo has the alt text "MIS Society at CSUSM logo". The logos in the navbar and footer have `alt=""` because the words "MIS Society" sit right beside them. There are no photos yet, so there is no other alt text to review.
 - **The quiz adds two extra CSS files** (`quiz/css/style.css` is Felix's, `quiz/css/quiz-site.css` maps it onto the site). The rubric's "one external CSS file" holds for all six main pages.
 - **Quiz needs JavaScript.** Without it the page explains that and Careers still shows the same information.
 - **Not run:** `pa11y` (it downloads its own browser; axe-core in Edge is the same engine family) and the W3C online validator (it would send the pages to an outside service; `html-validate` was used instead).
