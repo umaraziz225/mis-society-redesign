@@ -246,3 +246,36 @@ main:focus { outline: none; }   /* main is focus target of the skip link only */
 #eventsCarousel .carousel-control-prev, #eventsCarousel .carousel-control-next { width: 4rem; opacity: .9; }
 #eventsCarousel .carousel-control-prev:hover, #eventsCarousel .carousel-control-next:hover { opacity: 1; }
 @media (max-width: 575.98px) { #eventsCarousel .carousel-control-prev, #eventsCarousel .carousel-control-next { width: 3rem; } }
+
+/* ===== Toolkit ===== */
+.tool-card { scroll-margin-top: 6.5rem; }   /* deep links (resources.html#azure-students) clear the sticky header */
+.tool-card:target { box-shadow: 0 0 0 3px var(--primary), var(--shadow-md); }
+.tool-note, .ai-note { color: var(--text-muted); margin-bottom: .5rem; }
+.ai-note i { color: var(--primary); }
+
+/* Filter bar: JS-only. Without JS every card shows and the bar stays hidden. */
+.filter-bar { display: none; margin-bottom: var(--space-4); }
+.js .filter-bar { display: block; }
+.filter-group { flex-wrap: wrap; gap: var(--space-2); }
+.filter-group > .btn { border-radius: 999px !important; margin-left: 0 !important; }
+.filter-group > .btn[aria-pressed="true"] { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }   /* white on navy 13.0:1 */
+.filter-status { margin: var(--space-3) 0 0; color: var(--text-muted); font-weight: 500; }
+
+/* "How to get it" collapse. Without JS the steps are always open and the toggle is hidden. */
+.steps-toggle { padding: 0; font-weight: 600; color: var(--primary); background: none; border: 0; border-radius: 4px; }
+.steps-toggle:hover { color: var(--primary-dark); }
+.steps-toggle .bi { display: inline-block; transition: transform .2s; }
+.steps-toggle[aria-expanded="true"] .bi { transform: rotate(180deg); }
+.steps-heading { display: none; }
+html:not(.js) .steps-heading { display: block; }
+html:not(.js) .steps-toggle { display: none; }
+html:not(.js) .tool-steps.collapse { display: block; }
+.tool-steps ol { padding-left: 1.25rem; margin: var(--space-2) 0 0; font-size: .98rem; }
+.tool-steps li { margin-bottom: .4rem; }
+@media (prefers-reduced-motion: reduce) { .steps-toggle .bi { transition: none; } }
+
+/* More campus resources */
+.resource-list { list-style: none; padding: 0; margin: 0; }
+.resource-list li { padding: .55rem 0; border-bottom: 1px solid var(--border); }
+.resource-list li:last-child { border-bottom: 0; }
+.resource-list a { font-weight: 600; }

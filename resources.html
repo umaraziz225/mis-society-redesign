@@ -41,11 +41,262 @@
     <section class="page-header">
       <div class="container">
         <h1>Student Toolkit</h1>
-        <p class="lead">You already have access to free software and perks as a CSUSM student. Here is what they are and how to claim each one.</p>
+        <p class="lead">Your CSUSM account already unlocks software that costs money elsewhere. Here is what it is and how to turn each tool on.</p>
       </div>
     </section>
     <hr class="divider-gradient">
-    <!-- Page content is added in later stages. -->
+
+    <!-- FREE TOOLS. Facts were checked against each official page in November 2026.
+         Not yet verified, so NOT listed: LinkedIn Learning, Tableau, Microsoft exam discounts, Career Center tools (Handshake, resume review), Library resources.
+         To add a tool: copy a card, give it a unique id, set data-category on the column (any of: ai productivity design data cloud). -->
+    <section class="section" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Free tools and perks</p>
+          <h2 id="tools-heading">Pick a tool, then follow the steps</h2>
+          <p>Each card shows who provides the tool, what it is good for, and how to get it. The button at the bottom opens the official page.</p>
+        </div>
+
+        <!-- Filter bar: hidden until JavaScript runs (js/main.js adds the "js" class to the page) -->
+        <div class="filter-bar" data-filter-bar>
+          <div class="btn-group filter-group" role="group" aria-label="Filter tools by category">
+            <button type="button" class="btn btn-outline-primary" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="ai" aria-pressed="false">AI</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="productivity" aria-pressed="false">Productivity</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="design" aria-pressed="false">Design</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="data" aria-pressed="false">Data &amp; Coding</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="cloud" aria-pressed="false">Cloud</button>
+          </div>
+          <p class="filter-status" id="filter-status" role="status" aria-live="polite">Showing 6 tools</p>
+        </div>
+
+        <div class="row g-4" id="tool-grid">
+          <div class="col-md-6 col-lg-4" data-category="ai">
+            <article class="card tool-card h-100" id="chatgpt-edu">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-start gap-3">
+                  <span class="icon-tile flex-shrink-0" aria-hidden="true"><i class="bi bi-chat-dots"></i></span>
+                  <div>
+                    <h3 class="card-title h5 mb-2">ChatGPT Edu</h3>
+                    <span class="badge badge-accent">Provided by CSUSM</span>
+                  </div>
+                </div>
+                <p class="mt-3">A ChatGPT account the CSU system pays for. Your chats are not used to train OpenAI's models.</p>
+                <p class="small mb-2"><span class="fw-semibold">Good for:</span> <span class="badge badge-soft">Coursework</span></p>
+                <p class="small tool-note">Usage limits apply to most features since September 1, 2026, and CSUSM cannot reset them. Basic features stay available.</p>
+                <p class="small ai-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Check each instructor's AI policy before using AI for coursework.</p>
+                <div class="mt-auto pt-2">
+                  <p class="steps-heading fw-semibold mb-1">How to get it</p>
+                  <button class="btn steps-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#steps-chatgpt-edu" aria-expanded="false" aria-controls="steps-chatgpt-edu">
+                    How to get it <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="collapse tool-steps" id="steps-chatgpt-edu">
+                    <ol>
+                      <li>Signing up is optional. Request your license with the ChatGPT Edu License Request form on the CSUSM page.</li>
+                      <li>Open the invite email and select "Join Workspace". You can also go to ChatGPT and choose "Log in" (not sign-up).</li>
+                      <li>Click the top box that says "San Marcos" and log in with your campus username and password.</li>
+                      <li>Already have a ChatGPT account with your CSUSM email? You will be asked whether to move your chats. Anything you do not move is deleted.</li>
+                    </ol>
+                  </div>
+                  <div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="https://www.csusm.edu/iits/iitsforyou/generativeai/chatgpt/index.html" target="_blank" rel="noopener">Official CSUSM page <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></div>
+                  <p class="small text-muted-2 mt-2 mb-0">Last checked: November 2026</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-category="productivity ai">
+            <article class="card tool-card h-100" id="microsoft-365">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-start gap-3">
+                  <span class="icon-tile flex-shrink-0" aria-hidden="true"><i class="bi bi-microsoft"></i></span>
+                  <div>
+                    <h3 class="card-title h5 mb-2">Microsoft 365 + Copilot</h3>
+                    <span class="badge badge-accent">Provided by CSUSM</span>
+                  </div>
+                </div>
+                <p class="mt-3">Microsoft 365 for every active CSUSM student: Office apps in your browser or installed on your own devices, plus OneDrive cloud storage.</p>
+                <p class="small mb-2"><span class="fw-semibold">Good for:</span> <span class="badge badge-soft">Coursework</span> <span class="badge badge-soft">Career</span></p>
+                <p class="small tool-note">CSUSM's ChatGPT page also points to Microsoft Copilot, which can be used in most cases without usage limits.</p>
+                <p class="small ai-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Check each instructor's AI policy before using AI for coursework.</p>
+                <div class="mt-auto pt-2">
+                  <p class="steps-heading fw-semibold mb-1">How to get it</p>
+                  <button class="btn steps-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#steps-microsoft-365" aria-expanded="false" aria-controls="steps-microsoft-365">
+                    How to get it <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="collapse tool-steps" id="steps-microsoft-365">
+                    <ol>
+                      <li>Open a web browser, go to Office.com, and log in with your campus username and password.</li>
+                      <li>To install the apps, follow the "Install on a Mac or PC" guide on the CSUSM page. Personally owned devices are allowed.</li>
+                      <li>Plan ahead: you lose access when you leave CSUSM, so back up your files to personal cloud storage before you graduate.</li>
+                    </ol>
+                  </div>
+                  <div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="https://csusm.edu/iits/iitsforyou/office365/download-msoffice/index.html" target="_blank" rel="noopener">Official CSUSM page <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></div>
+                  <p class="small text-muted-2 mt-2 mb-0">Last checked: November 2026</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-category="design">
+            <article class="card tool-card h-100" id="adobe-creative-cloud">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-start gap-3">
+                  <span class="icon-tile flex-shrink-0" aria-hidden="true"><i class="bi bi-palette"></i></span>
+                  <div>
+                    <h3 class="card-title h5 mb-2">Adobe Creative Cloud</h3>
+                    <span class="badge badge-accent">Provided by CSUSM</span>
+                  </div>
+                </div>
+                <p class="mt-3">Photoshop, Illustrator, Premiere Pro, and the rest of Adobe Creative Cloud, free while you are a currently enrolled student.</p>
+                <p class="small mb-2"><span class="fw-semibold">Good for:</span> <span class="badge badge-soft">Design</span> <span class="badge badge-soft">Career</span></p>
+                <div class="mt-auto pt-2">
+                  <p class="steps-heading fw-semibold mb-1">How to get it</p>
+                  <button class="btn steps-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#steps-adobe-creative-cloud" aria-expanded="false" aria-controls="steps-adobe-creative-cloud">
+                    How to get it <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="collapse tool-steps" id="steps-adobe-creative-cloud">
+                    <ol>
+                      <li>CSUSM gives students redemption codes. Follow the install and redemption steps on the CSUSM Adobe page (it has a how-to video).</li>
+                      <li>Sign in to the apps to use them. You can use them on campus computers and on your home computer.</li>
+                      <li>You keep access as long as you are enrolled. Back up your files before you graduate.</li>
+                    </ol>
+                  </div>
+                  <div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="https://www.csusm.edu/iits/iitsforyou/adobe/download-adobe/index.html" target="_blank" rel="noopener">Official CSUSM page <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></div>
+                  <p class="small text-muted-2 mt-2 mb-0">Last checked: November 2026</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-category="data">
+            <article class="card tool-card h-100" id="mis-software">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-start gap-3">
+                  <span class="icon-tile flex-shrink-0" aria-hidden="true"><i class="bi bi-pc-display"></i></span>
+                  <div>
+                    <h3 class="card-title h5 mb-2">MIS-relevant software</h3>
+                    <span class="badge badge-accent">Provided by CSUSM</span>
+                  </div>
+                </div>
+                <p class="mt-3">Software from your MIS classes that CSUSM lists for students: SPSS, Visio, SQL Developer, SAP Logon, R and R Studio, StarUML, and Minitab.</p>
+                <p class="small mb-2"><span class="fw-semibold">Good for:</span> <span class="badge badge-soft">Coursework</span> <span class="badge badge-soft">Data</span> <span class="badge badge-soft">Coding</span></p>
+                <div class="mt-auto pt-2">
+                  <p class="steps-heading fw-semibold mb-1">How to get it</p>
+                  <button class="btn steps-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#steps-mis-software" aria-expanded="false" aria-controls="steps-mis-software">
+                    How to get it <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="collapse tool-steps" id="steps-mis-software">
+                    <ol>
+                      <li>Open CSUSM's campus software list.</li>
+                      <li>Find the program. The "Cougar Apps - Students" column shows what you can run through Cougar Apps, and "Available for Personal Devices" shows what you can download.</li>
+                      <li>Need software for a class that is not on the list? CSUSM says to contact your instructor.</li>
+                    </ol>
+                  </div>
+                  <div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="https://www.csusm.edu/iits/iitsforyou/software/index.html" target="_blank" rel="noopener">Official CSUSM page <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></div>
+                  <p class="small text-muted-2 mt-2 mb-0">Last checked: November 2026</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-category="cloud data">
+            <article class="card tool-card h-100" id="azure-students">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-start gap-3">
+                  <span class="icon-tile flex-shrink-0" aria-hidden="true"><i class="bi bi-cloud"></i></span>
+                  <div>
+                    <h3 class="card-title h5 mb-2">Azure for Students</h3>
+                    <span class="badge badge-accent">Free with student email</span>
+                  </div>
+                </div>
+                <p class="mt-3">$100 in Azure credit to use in your first 12 months, plus select free services. No credit card needed.</p>
+                <p class="small mb-2"><span class="fw-semibold">Good for:</span> <span class="badge badge-soft">Coding</span> <span class="badge badge-soft">Data</span></p>
+                <p class="small tool-note">You must be 18 or older and a full-time student at an accredited, degree-granting school.</p>
+                <div class="mt-auto pt-2">
+                  <p class="steps-heading fw-semibold mb-1">How to get it</p>
+                  <button class="btn steps-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#steps-azure-students" aria-expanded="false" aria-controls="steps-azure-students">
+                    How to get it <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="collapse tool-steps" id="steps-azure-students">
+                    <ol>
+                      <li>Go to Microsoft's Azure for Students page and select the apply link.</li>
+                      <li>Verify your student status with your school email address.</li>
+                      <li>Use your credit within 12 months. Unused credit does not carry over.</li>
+                    </ol>
+                  </div>
+                  <div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0170p/" target="_blank" rel="noopener">Official Microsoft page <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></div>
+                  <p class="small text-muted-2 mt-2 mb-0">Last checked: November 2026</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4" data-category="data ai">
+            <article class="card tool-card h-100" id="github-student-pack">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-start gap-3">
+                  <span class="icon-tile flex-shrink-0" aria-hidden="true"><i class="bi bi-github"></i></span>
+                  <div>
+                    <h3 class="card-title h5 mb-2">GitHub Student Developer Pack</h3>
+                    <span class="badge badge-accent">Free for verified students</span>
+                  </div>
+                </div>
+                <p class="mt-3">Free GitHub Pro while you are a student, plus offers from partner companies. Verified students can also get GitHub Copilot Student.</p>
+                <p class="small mb-2"><span class="fw-semibold">Good for:</span> <span class="badge badge-soft">Coding</span> <span class="badge badge-soft">Career</span></p>
+                <p class="small tool-note">Copilot Student includes unlimited code completions but only limited chat and agent use.</p>
+                <p class="small ai-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Check each instructor's AI policy before using AI for coursework.</p>
+                <div class="mt-auto pt-2">
+                  <p class="steps-heading fw-semibold mb-1">How to get it</p>
+                  <button class="btn steps-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#steps-github-student-pack" aria-expanded="false" aria-controls="steps-github-student-pack">
+                    How to get it <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div class="collapse tool-steps" id="steps-github-student-pack">
+                    <ol>
+                      <li>Go to education.github.com/pack and select the sign-up button.</li>
+                      <li>Verify that you are a student when GitHub asks.</li>
+                      <li>Browse the pack to pick the offers you want, such as GitHub Pro and GitHub Copilot.</li>
+                    </ol>
+                  </div>
+                  <div class="mt-3"><a class="btn btn-outline-primary btn-sm" href="https://education.github.com/pack" target="_blank" rel="noopener">Official GitHub page <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></div>
+                  <p class="small text-muted-2 mt-2 mb-0">Last checked: November 2026</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE CAMPUS RESOURCES. Links come from the current club site, each checked in November 2026. -->
+    <section class="section section-alt" aria-labelledby="campus-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Beyond software</p>
+          <h2 id="campus-heading">More campus resources</h2>
+          <p>Help with advising, degrees, grants, and careers is already on campus.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h3 class="card-title h5">College of Business Administration</h3>
+              <ul class="resource-list">
+                <li><a href="https://www.csusm.edu/coba/advising/index.html" target="_blank" rel="noopener">Advising Office <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+                <li><a href="https://www.csusm.edu/coba/degrees/index.html" target="_blank" rel="noopener">Degrees <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+                <li><a href="https://www.csusm.edu/coba/signature-programs/index.html" target="_blank" rel="noopener">Signature Programs <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+                <li><a href="https://www.csusm.edu/coba/signature-programs/studentgrants/index.html" target="_blank" rel="noopener">Student Success Grants <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+                <li><a href="https://www.csusm.edu/careers/careercentercloset.html" target="_blank" rel="noopener">Cougar Career Closet <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+              </ul>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h3 class="card-title h5">Career Center</h3>
+              <ul class="resource-list">
+                <li><a href="https://www.csusm.edu/careers/index.html" target="_blank" rel="noopener">Career Center home <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+                <li><a href="https://www.csusm.edu/careers/careerservices/index.html" target="_blank" rel="noopener">Career Services <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+                <li><a href="https://www.csusm.edu/careers/events/index.html" target="_blank" rel="noopener">Events <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a></li>
+              </ul>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

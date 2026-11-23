@@ -30,3 +30,11 @@ Don't publish until checked: LinkedIn Learning, Tableau for Students, Microsoft 
 - [ ] **Link targets that later stages must create**: resources.html ids `chatgpt-edu`, `microsoft-365`, `adobe-creative-cloud`, `azure-students` (Stage 3); `careers.html#quiz` (Stage 4); `join.html#partners` (Stage 7). The Home page already links to them.
 - [ ] **Real event dates**: the Home carousel shows three sample events, labeled "Sample schedule". Replace them when the club confirms Spring 2027 dates (same item as the Events list above).
 - [ ] **Quiz length**: the Home page says "about 7 minutes", taken from the quiz's own README. Confirm if Felix changes the quiz.
+
+## Added in Stage 3
+
+- [ ] **CLAUDE.md section 6 is out of date** (resources.html, index.html): re-checked November 22, 2026 against the official pages. ChatGPT Edu now has usage limits (since Sept 1, 2026). Azure: no "renewable yearly" on the page, and it requires age 18+ and full-time student status. GitHub: GitHub Pro is free for students; the Copilot offer is "Copilot Student" with limited chat and agent use. The site follows the official pages. Update section 6 when the team agrees.
+- [ ] **Microsoft 365 details not confirmed by CSUSM**: "Copilot inside the apps" and the "drop cougars from the address" sign-in tip were not on CSUSM's pages, so they are left out. The card says only what CSUSM's pages say (sign in at Office.com with your campus username and password).
+- [ ] **Adobe redemption steps**: the card points to CSUSM's Adobe page for the exact steps; the page text confirms redemption codes but the card does not spell out the steps.
+- [ ] **Re-check all Toolkit and campus links the week before Dec 8** (ChatGPT Edu limits are changing; custom GPTs are retired Feb 11, 2027 per the CSUSM page).
+- [ ] **Good-for badges and "Free for verified students" label** are the team's editorial choices, not from the official pages. Review the wording.

@@ -145,15 +145,25 @@ async function runPage(browser, file, mode, base) {
 
   await check(P, M, "Internal links and assets resolve", async () => {
     const refs = await page.evaluate(inPage.refs), ids = await page.evaluate(() => new Set([...document.querySelectorAll("[id]")].map(e => e.id)) && [...document.querySelectorAll("[id]")].map(e => e.id));
-    const bad = [];
+    const bad = [], warns = [];
     for (const [, ref] of refs) {
       if (!ref || /^(https?:|mailto:|tel:|data:|javascript:)/i.test(ref)) continue;
       if (ref.startsWith("#")) { if (ref.length > 1 && !ids.includes(ref.slice(1))) bad.push(ref); continue; }
       if (ref.startsWith("/")) { bad.push(ref + " (absolute path; use relative)"); continue; }
       const f = path.resolve(path.dirname(path.join(ROOT, file)), decodeURIComponent(ref.split(/[?#]/)[0]));
-      if (!fs.existsSync(f)) bad.push(ref);
+      if (!fs.existsSync(f)) { bad.push(ref); continue; }
+      // page.html#anchor: the id must exist on the destination page (read from disk)
+      const frag = ref.includes("#") ? decodeURIComponent(ref.split("#")[1]) : "";
+      if (frag && f.endsWith(".html")) {
+        const dest = fs.readFileSync(f, "utf8");
+        if (!new RegExp(`\\sid=["']${frag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`).test(dest)) {
+          // a page still holding only the skeleton is "not built yet": report, don't fail
+          (dest.includes("Page content is added in later stages") ? warns : bad).push(`${ref} (${dest.includes("Page content is added in later stages") ? "target page not built yet" : "no element with that id"})`);
+        }
+      }
     }
-    return [...new Set(bad)].join(", ");
+    if (bad.length) return [...new Set(bad)].join(", ");
+    if (warns.length) return { warn: [...new Set(warns)].join(", ") };
   });
 
   // Responsive: overflow + screenshots (screenshots only once, from the server run)
