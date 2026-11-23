@@ -170,7 +170,7 @@ async function runPage(browser, file, mode, base) {
   // Hamburger @375
   await page.setViewportSize({ width: 375, height: 800 });
   await page.reload({ waitUntil: "load" });
-  await check(P, M, "Mobile menu @375: opens, links usable, closes", async () => {
+  await check(P, M, "Mobile menu @375: opens, links usable, Escape/click closes", async () => {
     const tog = page.locator(".navbar-toggler");
     if (!(await tog.isVisible())) return "hamburger button not visible";
     const settled = open => page.waitForFunction(o => { const n = document.querySelector("#mainNav,.navbar-collapse"); return n && !n.classList.contains("collapsing") && n.classList.contains("show") === o; }, open, { timeout: 3000 });
@@ -183,6 +183,12 @@ async function runPage(browser, file, mode, base) {
       const hit = await page.evaluate(([x, y]) => { const e = document.elementFromPoint(x, y); return !!e && (e.closest("a.nav-link") != null); }, [b.x + b.width / 2, b.y + b.height / 2]);
       if (!hit) errs.push(`link "${(await l.innerText()).trim()}" covered`);
     }
+    // Escape closes the menu from a focused nav link and returns focus to the hamburger
+    await links.first().focus();
+    await page.keyboard.press("Escape"); await settled(false);
+    if (!(await page.evaluate(() => document.activeElement.classList.contains("navbar-toggler")))) errs.push("Escape did not return focus to the hamburger");
+    // a second click also closes it
+    await tog.click(); await settled(true);
     await tog.click(); await settled(false);
     return errs.join("; ");
   });
@@ -200,8 +206,8 @@ async function runPage(browser, file, mode, base) {
     await page.keyboard.press("Enter");
     f = await page.evaluate(inPage.focusInfo);
     if (f.id !== "main") errs.push(`skip link did not move focus to main (focus on ${f.tag}#${f.id})`);
-    // fresh pass through the nav
-    await page.reload({ waitUntil: "load" });
+    // fresh pass through the nav (goto, not reload: the skip link left #main in the URL)
+    await page.goto(url, { waitUntil: "load" });
     await page.keyboard.press("Tab");
     const seen = [];
     for (let i = 0; i < 12; i++) {

@@ -38,14 +38,240 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="page-header">
+
+    <!-- 1. HERO (split: message left, logo right) -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <h1>Find the tools, careers, and community already open to you</h1>
-        <p class="lead">The MIS Society helps CSUSM business and MIS students discover free tools, career paths, and people. Start with what you already have, then see why joining is worth it.</p>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <p class="eyebrow">CSUSM College of Business Administration</p>
+            <h1 id="hero-title">Management Information Systems Society</h1>
+            <p class="lead">Bridging the transition from student to professional. The MIS Society brings in guest speakers, runs career-building sessions, and connects you to a community that is serious about internships, leadership, and real opportunities.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-primary btn-lg" href="join.html">Join the Society</a>
+              <a class="btn btn-outline-light btn-lg" href="resources.html">Explore free tools</a>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img class="hero-visual img-fluid" src="images/mis-society-logo.png" alt="" width="1592" height="1414">
+          </div>
+        </div>
       </div>
     </section>
     <hr class="divider-gradient">
-    <!-- Page content is added in later stages. -->
+
+    <!-- 2. WHAT IS MIS? -->
+    <section class="section" aria-labelledby="what-is-mis">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Start here</p>
+          <h2 id="what-is-mis">What is MIS?</h2>
+          <p>Management Information Systems (MIS) sits where business and technology meet. MIS professionals use data, systems, and strategy to help organizations make smarter decisions and run more smoothly.</p>
+        </div>
+        <p class="max-w-prose mb-4">The field covers these areas. You could work in any industry, because every industry runs on technology.</p>
+        <div class="row g-4 justify-content-center">
+          <!-- One tile per area listed on the current club site -->
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-cpu"></i></span><h3>Emerging technologies</h3></div></div>
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-database"></i></span><h3>Database management</h3></div></div>
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-shield-lock"></i></span><h3>Cybersecurity</h3></div></div>
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-kanban"></i></span><h3>Product management</h3></div></div>
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-chat-square-text"></i></span><h3>Consulting</h3></div></div>
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span><h3>Business analytics</h3></div></div>
+          <div class="col-6 col-lg-3"><div class="mis-area"><span class="icon-tile" aria-hidden="true"><i class="bi bi-diagram-3"></i></span><h3>Systems design</h3></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WHAT YOUR CSUSM EMAIL UNLOCKS (facts from CLAUDE.md section 6 only).
+         The "See how to get it" links point to ids Stage 3 must create on resources.html:
+         chatgpt-edu, microsoft-365, adobe-creative-cloud, azure-students -->
+    <section class="section section-alt" aria-labelledby="email-unlocks">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Free for CSUSM students</p>
+          <h2 id="email-unlocks">What your CSUSM email unlocks</h2>
+          <p>You already have access to professional tools. Sign in with your CSUSM account and start using them.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100">
+              <div class="card-body d-flex flex-column">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-chat-dots"></i></span>
+                <h3 class="card-title h5">ChatGPT Edu</h3>
+                <p>A CSU-licensed ChatGPT with higher limits. Your chats are not used for training.</p>
+                <p class="small text-muted-2">Check each instructor's AI policy before using AI for coursework.</p>
+                <a class="mt-auto fw-semibold" href="resources.html#chatgpt-edu">See how to get it <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100">
+              <div class="card-body d-flex flex-column">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-microsoft"></i></span>
+                <h3 class="card-title h5">Microsoft 365 + Copilot</h3>
+                <p>Word, Excel, PowerPoint, Outlook, and Teams, with Copilot inside the apps. Install them on your own devices.</p>
+                <a class="mt-auto fw-semibold" href="resources.html#microsoft-365">See how to get it <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100">
+              <div class="card-body d-flex flex-column">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-palette"></i></span>
+                <h3 class="card-title h5">Adobe Creative Cloud</h3>
+                <p>Photoshop, Illustrator, Premiere, and more, free for students.</p>
+                <a class="mt-auto fw-semibold" href="resources.html#adobe-creative-cloud">See how to get it <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100">
+              <div class="card-body d-flex flex-column">
+                <span class="icon-tile" aria-hidden="true"><i class="bi bi-cloud"></i></span>
+                <h3 class="card-title h5">Azure for Students</h3>
+                <p>A $100 Azure credit for 12 months, plus free services. No credit card needed.</p>
+                <a class="mt-auto fw-semibold" href="resources.html#azure-students">See how to get it <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a class="btn btn-outline-primary btn-lg" href="resources.html">See all free tools</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. UPCOMING EVENTS (sample schedule)
+         SAMPLE EVENTS, shared with Stage 5 (events.html). Month-level dates only.
+         Location for all: CSUSM campus (room posted by the club).
+           1. Spring Kickoff & Info Night       | Social        | Late January 2027
+           2. Resume & LinkedIn Workshop        | Workshop      | February 2027
+           3. Industry Speaker Panel: Careers in MIS | Speaker  | March 2027
+           4. SQL & Power BI Hands-On Workshop  | Workshop      | March 2027
+           5. Company Visit (company to be announced by the club) | Company visit | April 2027
+           6. End-of-Year Mixer & Officer Elections Info | Social | May 2027
+         The carousel below shows events 1 to 3. -->
+    <section class="section" aria-labelledby="upcoming-events">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Spring 2027</p>
+          <h2 id="upcoming-events">Upcoming events <span class="badge badge-accent align-middle ms-2">Sample schedule</span></h2>
+          <p>A preview of the kinds of events the club runs. This is a sample schedule for a class demo, not confirmed dates.</p>
+        </div>
+
+        <div id="eventsCarousel" class="carousel slide" data-bs-interval="false" data-bs-touch="true" role="region" aria-roledescription="carousel" aria-label="Sample Spring 2027 events">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1: Spring Kickoff and Info Night"></button>
+            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2: Resume and LinkedIn Workshop"></button>
+            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3: Industry Speaker Panel"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="event-slide">
+                <span class="badge badge-soft">Social</span>
+                <h3>Spring Kickoff &amp; Info Night</h3>
+                <p class="event-meta"><i class="bi bi-calendar3" aria-hidden="true"></i> Late January 2027 &nbsp; <i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</p>
+                <p>Learn what the MIS Society does and how to get involved.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="event-slide">
+                <span class="badge badge-soft">Workshop</span>
+                <h3>Resume &amp; LinkedIn Workshop</h3>
+                <p class="event-meta"><i class="bi bi-calendar3" aria-hidden="true"></i> February 2027 &nbsp; <i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</p>
+                <p>Internship prep for your resume, your LinkedIn profile, and your recruiting strategy.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="event-slide">
+                <span class="badge badge-soft">Speaker</span>
+                <h3>Industry Speaker Panel: Careers in MIS</h3>
+                <p class="event-meta"><i class="bi bi-calendar3" aria-hidden="true"></i> March 2027 &nbsp; <i class="bi bi-geo-alt" aria-hidden="true"></i> CSUSM campus (room posted by the club)</p>
+                <p>Guest speakers and real Q&amp;A, not just presentations.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous event</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next event</span>
+          </button>
+        </div>
+        <p class="mt-4 mb-0"><a class="fw-semibold" href="events.html">See the full sample schedule <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>
+      </div>
+    </section>
+
+    <!-- 5. WHY JOIN (perks the current club site lists; nothing added) -->
+    <section class="section section-alt" aria-labelledby="why-join">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Member perks</p>
+          <h2 id="why-join">Why join</h2>
+          <p>We are a group of students and faculty focused on the professional success of our members.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-mic"></i></span>
+              <h3 class="card-title h5">Guest speakers</h3>
+              <p class="mb-0">Real Q&amp;A with professionals, not just presentations.</p>
+            </div></article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-briefcase"></i></span>
+              <h3 class="card-title h5">Internship prep</h3>
+              <p class="mb-0">Get help with your resume, LinkedIn, interviews, and recruiting strategy.</p>
+            </div></article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-compass"></i></span>
+              <h3 class="card-title h5">Career clarity</h3>
+              <p class="mb-0">See roles explained and paths mapped, so you can choose with confidence.</p>
+            </div></article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-people"></i></span>
+              <h3 class="card-title h5">Community</h3>
+              <p class="mb-0">Meet people who actually show up and grow.</p>
+            </div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CAREER QUIZ CALL-OUT. "About 7 minutes" comes from the quiz's own README (3 + 3 + 1 minute parts). -->
+    <section class="band band-quiz" aria-labelledby="quiz-callout">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2 id="quiz-callout">Not sure which MIS career fits you?</h2>
+            <p class="mb-0">Take the Career Fit Quiz. It takes about 7 minutes and matches you with 12 MIS career families, with job outlook and certifications for each.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-primary btn-lg" href="careers.html#quiz">Take the Career Fit Quiz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CLOSING CTA -->
+    <section class="section text-center" aria-labelledby="get-involved">
+      <div class="container">
+        <h2 id="get-involved">Ready to get involved?</h2>
+        <p class="lead mx-auto max-w-prose">Join the Society to meet speakers, prepare for internships, and find your people.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a class="btn btn-primary btn-lg" href="join.html">Join the Society</a>
+          <a class="btn btn-outline-primary btn-lg" href="join.html#partners">Partner with us</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

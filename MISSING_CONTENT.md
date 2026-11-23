@@ -24,3 +24,9 @@ Don't publish until checked: LinkedIn Learning, Tableau for Students, Microsoft 
 
 - [ ] **Logo on the navy footer** (every page, footer): the logo is a black hexagon with a purple-to-cyan border, not blue and white. It sits on white in the navbar and on navy in the footer. Ask the club whether a white or blue version exists.
 - [ ] **Real Instagram URL**: an HTML comment marks the spot in every page's footer (same item as above).
+
+## Added in Stage 2
+
+- [ ] **Link targets that later stages must create**: resources.html ids `chatgpt-edu`, `microsoft-365`, `adobe-creative-cloud`, `azure-students` (Stage 3); `careers.html#quiz` (Stage 4); `join.html#partners` (Stage 7). The Home page already links to them.
+- [ ] **Real event dates**: the Home carousel shows three sample events, labeled "Sample schedule". Replace them when the club confirms Spring 2027 dates (same item as the Events list above).
+- [ ] **Quiz length**: the Home page says "about 7 minutes", taken from the quiz's own README. Confirm if Felix changes the quiz.

@@ -210,3 +210,39 @@ main:focus { outline: none; }   /* main is focus target of the skip link only */
 /* 6. PAGE BLOCKS (one per page, added in later stages) ------------------------
    Home | Student Toolkit | Careers | Events | About | Join
    ------------------------------------------------------------------------- */
+
+/* ===== Home ===== */
+.hero-visual { max-width: 17rem; }
+@media (min-width: 992px) { .hero-visual { max-width: 22rem; } }
+
+/* "What is MIS?" area tiles */
+.mis-area { text-align: center; padding: var(--space-2); }
+.mis-area .icon-tile { width: 4rem; height: 4rem; font-size: 1.75rem; }
+.mis-area h3 { font-size: 1.05rem; margin: 0; }
+
+/* Events carousel: navy slides so Bootstrap's white controls stay visible (white on navy 13.0:1) */
+#eventsCarousel { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+.event-slide {
+  min-height: 17rem; color: #fff; padding: var(--space-5) 4.5rem 4rem;
+  background:
+    radial-gradient(rgba(255, 255, 255, .12) 1.2px, transparent 1.2px) 0 0 / 22px 22px,
+    linear-gradient(135deg, var(--primary-dark) 0%, #00479F 100%);
+}
+.event-slide h3 { color: #fff; font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin: var(--space-3) 0 var(--space-2); }
+.event-slide p { color: var(--on-dark); margin-bottom: var(--space-2); max-width: 40rem; }   /* 10.3:1 on navy, 6.9:1 at the blue end */
+.event-slide .event-meta { color: #fff; font-weight: 500; }
+#eventsCarousel .carousel-indicators { margin-bottom: var(--space-3); }
+#eventsCarousel .carousel-indicators [data-bs-target] { height: 6px; border: 0; border-radius: 3px; }
+/* Bootstrap sets outline:0 on carousel controls, so the focus ring is restored here (amber on navy 8.0:1) */
+#eventsCarousel .carousel-control-prev:focus-visible, #eventsCarousel .carousel-control-next:focus-visible,
+#eventsCarousel .carousel-indicators [data-bs-target]:focus-visible { outline: 3px solid var(--accent-hover); outline-offset: -4px; opacity: 1; }
+@media (max-width: 575.98px) { .event-slide { padding: var(--space-4) 3.25rem 3.5rem; } }
+
+/* Career quiz call-out band */
+.band { padding: var(--space-5) 0; }
+.band-quiz { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; }   /* white on blue end: 6.4:1 */
+.band-quiz h2 { color: #fff; }
+/* Narrow controls so the arrows sit in the slide's side padding, not on the text */
+#eventsCarousel .carousel-control-prev, #eventsCarousel .carousel-control-next { width: 4rem; opacity: .9; }
+#eventsCarousel .carousel-control-prev:hover, #eventsCarousel .carousel-control-next:hover { opacity: 1; }
+@media (max-width: 575.98px) { #eventsCarousel .carousel-control-prev, #eventsCarousel .carousel-control-next { width: 3rem; } }

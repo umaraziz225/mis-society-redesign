@@ -183,4 +183,4 @@ Flagged for team:
 
 ### Testing rule
 
-After every stage, run `npm test --prefix tests`, fix every failure you can, re-run until it passes, and include the summary in your report.
+After every stage, run `npm test --prefix tests`, fix every failure you can, re-run until it passes, and include the summary in your report and the Vibe Coding Log's "How we tested" column. Add interactive checks to tests/page-checks.js for any new feature you build. Only list for Umar what genuinely needs a human eye (visual look, wording).
