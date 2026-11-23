@@ -6,7 +6,7 @@ Context file for any AI assistant (Claude, Copilot, etc.) helping build this pro
 
 ## 1. The project in one paragraph
 
-A 5-person team in **MIS 410 (CSUSM, Fall 2026, Dr. Yubo Fu)** is building a responsive mock redesign of the **CSUSM MIS Society** website with HTML, custom CSS, and Bootstrap, using a documented "vibe coding" process. Most of the team are MIS Society board members, and the club (president: Fang Fang) supports the project, so **real club name, logo, officers, and content may be used**. The site should be useful to non-members first, so that joining the club feels like the natural next step.
+A 5-person team in **MIS 410 (CSUSM, Fall 2026, Dr. Yubo Fu)** is building a responsive mock redesign of the **CSUSM MIS Society** website with HTML, custom CSS, and Bootstrap, using a documented "vibe coding" process. Most of the team are MIS Society board members, and the club (faculty advisor: Fang Fang) supports the project, so **real club name, logo, officers, and content may be used**. The site should be useful to non-members first, so that joining the club feels like the natural next step.
 
 **Challenge statement:** How might we help CSUSM business and MIS students find the tools, careers, and community they already have access to, and see why the MIS Society is worth joining?
 
@@ -176,7 +176,7 @@ Hosting: the folder submission must work on its own (relative links only). Also 
 Missing facts: never invent club facts. Visible page text must never contain placeholder text. That includes "[NEEDS CONTENT]", "Lorem ipsum", "Coming soon" and "TBD", because the rubric deducts for it. If a fact is missing, either leave that bit out or put an HTML comment <!-- NEEDS CONTENT: ... --> where it would go, and log it in MISSING_CONTENT.md. (This replaces the visible-marker rule in section 9.)
 
 Flagged for team:
-- Advisor vs. president: section 1 says "president: Fang Fang", but the current site lists Fang Fang as faculty advisor and Ryan Mohammadpour as President. The site follows the current website until the team confirms.
+- Advisor vs. president: RESOLVED 11/22. Fang Fang is the faculty advisor (and CSUSM MIS Department Chair); Ryan Mohammadpour is the president. The site matches.
 - Spelling: "Zachariah Yamsuan" (current site) vs. "Zechariah" (brief). Use whichever Zech confirms; the current site's spelling for now.
 - Real Instagram URL (the current site's Instagram icon links to LinkedIn).
 - Membership fee, eligibility, meeting times and location.

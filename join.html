@@ -40,12 +40,237 @@
   <main id="main" tabindex="-1">
     <section class="page-header">
       <div class="container">
-        <h1>Join the Society</h1>
-        <p class="lead">Ready to get involved? Here is how to become a member, and how employers and guest speakers can reach the club.</p>
+        <h1>Join the MIS Society</h1>
+        <p class="lead">The MIS Society is a group of CSUSM students and faculty focused on the professional success of our members. If you want a career where business meets technology, you will find speakers, internship help, and a community here.</p>
       </div>
     </section>
     <hr class="divider-gradient">
-    <!-- Page content is added in later stages. -->
+
+    <!-- 2. WHAT YOU GET: the member perks the current club site lists, as a compact checklist (nothing added) -->
+    <section class="section" aria-labelledby="perks-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Member perks</p>
+          <h2 id="perks-heading">What you get</h2>
+        </div>
+        <ul class="perk-list">
+          <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <span><strong>Guest speakers and real Q&amp;A.</strong> Not just presentations.</span></li>
+          <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <span><strong>Internship prep.</strong> Help with your resume, LinkedIn, interviews, and recruiting strategy.</span></li>
+          <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <span><strong>Career clarity.</strong> Roles explained and paths mapped, so you can choose with confidence.</span></li>
+          <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <span><strong>Community.</strong> Meet people who actually show up and grow.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. HOW JOINING WORKS. No fees, eligibility rules or meeting times are stated: the club has not given us those (see MISSING_CONTENT.md). -->
+    <section class="section section-alt" aria-labelledby="steps-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Three steps</p>
+          <h2 id="steps-heading">How joining works</h2>
+        </div>
+        <ol class="stepper">
+          <li>
+            <h3 class="h5">Fill out the interest form or email us</h3>
+            <p class="mb-0">Use the form below, or write to <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a>.</p>
+          </li>
+          <li>
+            <h3 class="h5">Come to a meeting or event</h3>
+            <p class="mb-0">See the <a href="events.html">Events page</a> and the club's LinkedIn for what is coming up.</p>
+          </li>
+          <li>
+            <h3 class="h5">Get involved</h3>
+            <p class="mb-0">Attend, volunteer, or run for an officer role.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. MEMBERSHIP INTEREST FORM: design only. JavaScript (js/main.js) validates it and shows a demo notice. Nothing is ever sent.
+         Without JavaScript the form is hidden and a note points to the club email. -->
+    <section class="section" id="interest-form" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card form-card">
+              <div class="card-body p-4 p-md-5">
+                <h2 id="form-heading">Join the MIS Society today!</h2>
+                <p class="text-muted-2">Tell us you are interested. This is a demo form for a class project, so nothing is sent.</p>
+
+                <p class="no-js-note">The demo form needs JavaScript. To join for real, email <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a>.</p>
+
+                <form class="demo-form needs-validation" data-demo-form novalidate>
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label for="firstName" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" autocomplete="given-name" required data-error="firstName-error">
+                      <div class="invalid-feedback" id="firstName-error">Enter your first name.</div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="lastName" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" autocomplete="family-name" required data-error="lastName-error">
+                      <div class="invalid-feedback" id="lastName-error">Enter your last name.</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="email" class="form-label">CSUSM email</label>
+                      <input type="email" class="form-control" id="email" name="email" autocomplete="email" required
+                             pattern="[a-z0-9._%+\-]+@(cougars\.)?csusm\.edu" aria-describedby="email-help" data-error="email-error">
+                      <div class="form-text" id="email-help">Use your @csusm.edu or @cougars.csusm.edu address.</div>
+                      <div class="invalid-feedback" id="email-error">Enter your CSUSM email. It must end in @csusm.edu or @cougars.csusm.edu.</div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="major" class="form-label">Major</label>
+                      <select class="form-select" id="major" name="major" required data-error="major-error">
+                        <option value="">Choose your major</option>
+                        <option>MIS</option>
+                        <option>Other business concentration</option>
+                        <option>Undeclared</option>
+                        <option>Other</option>
+                      </select>
+                      <div class="invalid-feedback" id="major-error">Choose your major.</div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="year" class="form-label">Year</label>
+                      <select class="form-select" id="year" name="year" required data-error="year-error">
+                        <option value="">Choose your year</option>
+                        <option>First year</option>
+                        <option>Second year</option>
+                        <option>Third year</option>
+                        <option>Fourth year or beyond</option>
+                        <option>Graduate student</option>
+                      </select>
+                      <div class="invalid-feedback" id="year-error">Choose your year.</div>
+                    </div>
+                    <div class="col-12">
+                      <fieldset>
+                        <legend class="form-label fs-6">Interests <span class="text-muted-2 fw-normal">(optional)</span></legend>
+                        <div class="interest-grid">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="int-workshops" name="interests[]" value="Workshops"><label class="form-check-label" for="int-workshops">Workshops</label></div>
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="int-speakers" name="interests[]" value="Guest speakers"><label class="form-check-label" for="int-speakers">Guest speakers</label></div>
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="int-visits" name="interests[]" value="Company visits"><label class="form-check-label" for="int-visits">Company visits</label></div>
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="int-officer" name="interests[]" value="Officer roles"><label class="form-check-label" for="int-officer">Officer roles</label></div>
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="int-socials" name="interests[]" value="Socials"><label class="form-check-label" for="int-socials">Socials</label></div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label">Message <span class="text-muted-2 fw-normal">(optional)</span></label>
+                      <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary btn-lg" id="submit">Send my interest</button>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- JavaScript puts the demo notice here. aria-live makes screen readers announce it. -->
+                <div id="form-result" class="mt-4" aria-live="polite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FAQ. Only questions we can answer truthfully; the real rules are logged in MISSING_CONTENT.md.
+         id="officer-roles" is the target of the link on the About page. -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+        </div>
+        <div class="accordion" id="faqList">
+          <!-- NEEDS CONTENT: the club's real membership rules (major, fee, meeting schedule). Until then each answer points to email. -->
+          <div class="accordion-item" id="faq-major">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-major-body" aria-expanded="false" aria-controls="faq-major-body">Do I have to be an MIS major?</button></h3>
+            <div id="faq-major-body" class="accordion-collapse collapse">
+              <div class="accordion-body">The club is built around MIS and careers where business meets technology. Email <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a> to confirm the current membership rules.</div>
+            </div>
+          </div>
+          <div class="accordion-item" id="faq-fee">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-fee-body" aria-expanded="false" aria-controls="faq-fee-body">Is there a membership fee?</button></h3>
+            <div id="faq-fee-body" class="accordion-collapse collapse">
+              <div class="accordion-body">Email <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a> for current details.</div>
+            </div>
+          </div>
+          <div class="accordion-item" id="faq-meetings">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-meetings-body" aria-expanded="false" aria-controls="faq-meetings-body">When and where do meetings happen?</button></h3>
+            <div id="faq-meetings-body" class="accordion-collapse collapse">
+              <div class="accordion-body">Follow the club on <a href="https://www.linkedin.com/in/mis-society-203880251/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a> or email <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a> for the current schedule.</div>
+            </div>
+          </div>
+          <div class="accordion-item" id="officer-roles">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#officer-roles-body" aria-expanded="false" aria-controls="officer-roles-body">How do I become an officer?</button></h3>
+            <div id="officer-roles-body" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <p>Officer roles open periodically. The current board includes a President, Vice President, Chief Financial Officer, Chief Outreach Officer, Chief Information Officer, Chief Technology Officer, a Brand Manager, Social Media Managers, and Ambassadors. You can meet them on the <a href="about.html#team-heading">About page</a>.</p>
+                <p class="mb-0">Email <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a> to ask about openings.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="faq-partners">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-partners-body" aria-expanded="false" aria-controls="faq-partners-body">I'm an employer or speaker. How can we work together?</button></h3>
+            <div id="faq-partners-body" class="accordion-collapse collapse">
+              <div class="accordion-body">We would like to hear from you. See <a href="#partners">For employers and guest speakers</a> below.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PARTNERS (id="partners" is the target of the link on the Home page). Promises contact only, not a formal process. -->
+    <section class="section" id="partners" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Work with us</p>
+          <h2 id="partners-heading">For employers and guest speakers</h2>
+          <p>Students here want to meet people who work in the field. There are three ways to get involved.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-mic"></i></span>
+              <h3 class="card-title h5">Give a guest talk</h3>
+              <p class="mb-0">Share how you built your career and answer student questions.</p>
+            </div></div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-building"></i></span>
+              <h3 class="card-title h5">Host a company visit</h3>
+              <p class="mb-0">Welcome a group of members to your workplace.</p>
+            </div></div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-hover h-100"><div class="card-body">
+              <span class="icon-tile" aria-hidden="true"><i class="bi bi-tools"></i></span>
+              <h3 class="card-title h5">Lead a workshop</h3>
+              <p class="mb-0">Teach a hands-on skill your team uses every day.</p>
+            </div></div>
+          </div>
+        </div>
+        <p class="mt-4 mb-0"><a class="btn btn-primary btn-lg" href="mailto:csusmmissociety@gmail.com?subject=Partnership%20inquiry%3A%20MIS%20Society">Contact us</a></p>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT -->
+    <section class="section section-alt" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-heading">Contact the club</h2>
+        </div>
+        <div class="card contact-card">
+          <div class="card-body">
+            <ul class="contact-list">
+              <li><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:csusmmissociety@gmail.com">csusmmissociety@gmail.com</a></li>
+              <li><i class="bi bi-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/mis-society-203880251/" target="_blank" rel="noopener">MIS Society on LinkedIn<span class="visually-hidden"> (opens in new tab)</span></a></li>
+              <li><i class="bi bi-geo-alt" aria-hidden="true"></i> <address class="d-inline">CSU San Marcos, 333 S. Twin Oaks Valley Rd., San Marcos, CA 92096</address></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

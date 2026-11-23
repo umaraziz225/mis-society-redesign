@@ -178,8 +178,8 @@ main:focus { outline: none; }   /* main is focus target of the skip link only */
 
 /* Form controls */
 .form-label { font-weight: 600; color: var(--primary-dark); }
-.form-control, .form-select { border: 2px solid var(--border); border-radius: var(--radius-sm); padding: .65rem .9rem; }
-.form-control:focus, .form-select:focus { border-color: var(--primary); box-shadow: 0 0 0 .25rem rgba(242, 169, 0, .45); }
+.form-control, .form-select { border: 2px solid #76849A;   /* 3.8:1 on white: the edge of a field must be visible */ border-radius: var(--radius-sm); padding: .65rem .9rem; }
+.form-control:focus, .form-select:focus { border-color: var(--primary-dark); outline: 3px solid var(--primary-dark); outline-offset: 2px; box-shadow: none; }   /* navy ring, 13.0:1; Bootstrap sets outline:0 here */
 
 /* Alerts and modals */
 .alert { border-radius: var(--radius-sm); }
@@ -331,3 +331,41 @@ html:not(.js) .js-only { display: none; }
 .advisor-card { border-left: 6px solid var(--accent); max-width: 44rem; }
 .officer-card h4 { font-size: 1.05rem; overflow-wrap: break-word; }
 @media (max-width: 575.98px) { .officer-card .card-body { padding: var(--space-3) .6rem; } }   /* two cards per row on phones: leave room for long names */
+
+/* ===== Join ===== */
+.perk-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); max-width: 44rem; }
+.perk-list li { display: flex; gap: .75rem; align-items: flex-start; }
+.perk-list .bi { color: var(--primary); font-size: 1.35rem; line-height: 1.4; flex: 0 0 auto; }
+
+/* "How joining works": numbered steps drawn with a CSS counter */
+.stepper { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: var(--space-4); max-width: 44rem; }
+.stepper > li { counter-increment: step; position: relative; padding-left: 3.75rem; min-height: 2.75rem; }
+.stepper > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 700; font-size: 1.15rem; color: #fff;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary)); }   /* white on navy 13.0:1, on blue 6.4:1 */
+.stepper > li:not(:last-child)::after { content: ""; position: absolute; left: 1.3rem; top: 3rem; bottom: calc(-1 * var(--space-4) + .25rem); width: 3px; background: var(--border); }
+
+/* Interest form */
+.form-card { border-top: 6px solid var(--accent); }
+.needs-validation { --bs-form-invalid-color: #B02A37; --bs-form-invalid-border-color: #B02A37; --bs-form-valid-color: #146C43; --bs-form-valid-border-color: #146C43; }   /* dark red 6.6:1, dark green 6.4:1 on white */
+.needs-validation .invalid-feedback { font-size: .95rem; font-weight: 500; }
+.interest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: .5rem var(--space-3); }
+.form-check-input:focus-visible { outline: 3px solid var(--primary-dark); outline-offset: 2px; box-shadow: none; }
+.no-js-note { display: none; padding: var(--space-3); border-radius: var(--radius-sm); background: var(--light-bg); }
+html:not(.js) .no-js-note { display: block; }
+html:not(.js) .demo-form { display: none; }
+#faq .accordion-item, #officer-roles { scroll-margin-top: 6.5rem; }
+.contact-card { max-width: 44rem; }
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+.contact-list .bi { color: var(--primary); margin-right: .5rem; }
+.form-check-input { border-color: #76849A; }
+.form-check-input:checked { background-color: var(--primary); border-color: var(--primary); }
+/* Only show the invalid state after checking. Bootstrap also paints "valid" fields green, which is noisy on optional fields
+   (an empty message box is not a success), so valid fields keep the normal look. */
+.was-validated .form-control:valid, .was-validated .form-select:valid { border-color: #76849A; }
+.was-validated .form-control:valid { background-image: none; padding-right: .9rem; }
+.was-validated .form-select:valid:not([multiple]):not([size]) { background-image: var(--bs-form-select-bg-img); background-position: right .75rem center; background-size: 16px 12px; padding-right: 2.25rem; }
+.was-validated .form-check-input:valid { border-color: #76849A; }
+.was-validated .form-check-input:valid:checked { background-color: var(--primary); border-color: var(--primary); }
+.was-validated .form-check-input:valid ~ .form-check-label { color: inherit; }
+#form-result .alert-info { --bs-alert-bg: #E3EEFA; --bs-alert-color: var(--primary-dark); --bs-alert-border-color: var(--border); margin-bottom: 0; }   /* navy on light blue 11.0:1 */

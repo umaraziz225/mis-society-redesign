@@ -50,13 +50,14 @@ module.exports = [
     if (dot === "none" || dot === "normal") errs.push("timeline dots are not drawn");
     return errs.join("; ");
   }],
-  ["About: faculty advisor card (no photo, no contact details) and a comment about the advisor/president conflict", async page => {
+  ["About: faculty advisor card (no photo, no contact details) and a comment recording the confirmed answer", async page => {
     const errs = [], card = page.locator(".advisor-card");
     const t = await card.innerText();
     if (!/Fang Fang/.test(t) || !/Faculty Advisor/.test(t)) errs.push("name or title missing");
     if (await card.locator("img").count()) errs.push("advisor card has an image");
     if (/\(\d{3}\)|@csusm\.edu|\d{3}-\d{4}/.test(t)) errs.push("advisor contact details published");
-    if (!/NEEDS CONFIRMING: CLAUDE\.md section 1 says Fang Fang is the club's president/.test(source())) errs.push("no HTML comment about the advisor/president conflict");
+    if (!/Confirmed by the team 11\/22: Dr\. Fang Fang is the faculty advisor/.test(source())) errs.push("no HTML comment recording the confirmed advisor/president answer");
+    if (/NEEDS CONFIRMING/.test(source())) errs.push("a stale NEEDS CONFIRMING comment is still in about.html");
     return errs.join("; ");
   }],
   ["About: 12 officers with exactly the right names, roles and LinkedIn links, grouped 6 / 3 / 3", async page => {
