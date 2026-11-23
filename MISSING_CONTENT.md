@@ -27,7 +27,7 @@ Don't publish until checked: LinkedIn Learning, Tableau for Students, Microsoft 
 
 ## Added in Stage 2
 
-- [ ] **Link targets that later stages must create**: resources.html ids `chatgpt-edu`, `microsoft-365`, `adobe-creative-cloud`, `azure-students` (Stage 3); `join.html#partners` (Stage 7). The Home page already links to them.
+- [ ] **Link targets that later stages must create**: resources.html ids `chatgpt-edu`, `microsoft-365`, `adobe-creative-cloud`, `azure-students` (Stage 3); `join.html#partners` and `join.html#officer-roles` (Stage 7). The Home page already links to them.
 - [ ] **Real event dates**: the Home carousel shows three sample events, labeled "Sample schedule". Replace them when the club confirms Spring 2027 dates (same item as the Events list above).
 - [ ] **Quiz length**: the Home page says "about 7 minutes", taken from the quiz's own README. Confirm if Felix changes the quiz.
 
@@ -52,3 +52,13 @@ Don't publish until checked: LinkedIn Learning, Tableau for Students, Microsoft 
 - [ ] **Real Spring 2027 events** (events.html, index.html carousel): the six events, their months, and the "Who it's for" values are a labeled sample. In particular, which events are "Open to all students" and which are "Members" was chosen for the demo, not supplied by the club. Replace the rows, cards and modals, and remove the "Sample" alert and badges, when the club confirms its calendar.
 - [ ] **How RSVPs really work** (events.html): the RSVP modal says the club posts RSVP links on LinkedIn and by email. That wording comes from the project brief; confirm it matches what the club does.
 - [ ] **Event descriptions** (events.html): the "what you walk away with" lines are general and written for the sample events, based on the club's stated perks. Review the wording.
+
+## Added in Stage 6
+
+- [ ] **Advisor vs. president: still open, no answer yet** (about.html): about.html follows the current club site. That site's Advisor page says "Meet Dr. Fang Fang, CSUSM MIS Department Chair" and "alongside being our advisor, she is also the MIS Department Chair"; its Meet The Team page lists Ryan Mohammadpour as President. So the site's own pages say advisor, not president. CLAUDE.md section 1 still says "president: Fang Fang". Please confirm, then update CLAUDE.md section 1 and the flagged item in section 12.
+- [ ] **Where our alumni work** (about.html): not built. The current site shows unnamed company logos only. Needs company names the club can confirm.
+- [ ] **Dr. Fang's contact details and bio** (about.html): the current club site publishes her email, phone and a research bio. They are not copied here; add them only with her permission.
+- [ ] **Officer permissions** (about.html): all 12 officers and LinkedIn links come from the current club site. Each officer should confirm they are happy to be listed (CLAUDE.md section 11).
+- [ ] **Name spelling** (about.html): "Zachariah Yamsuan" follows the current site; the brief says "Zechariah". Zech to confirm (already flagged).
+- [ ] **Officer roles section on the Join page** (join.html): about.html links to `join.html#officer-roles`. Stage 7 must create that id.
+- [ ] **ASI wording** (about.html): the page says "ASI at CSUSM" as the current site does. Confirm whether to spell it out (Associated Students, Inc.).
