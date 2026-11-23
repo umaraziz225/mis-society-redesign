@@ -180,3 +180,7 @@ Flagged for team:
 - Membership fee, eligibility, meeting times and location.
 - Real past speakers or company visits with dates, and photos with permission.
 - Whether the instructor allows JS (if not, swap the quiz for an external link and replace the filter JS with static grouped sections).
+
+### Testing rule
+
+After every stage, run `npm test --prefix tests`, fix every failure you can, re-run until it passes, and include the summary in your report.

@@ -54,19 +54,24 @@ h4 { font-size: 1.1rem; }
 .lead { font-size: 1.2rem; color: var(--text-muted); }
 a { text-underline-offset: .15em; }
 
-/* Visible focus everywhere. Never remove. */
-:focus-visible {
-  outline: 3px solid var(--accent);
+/* Visible focus everywhere. Never remove. Navy on light areas (13.0:1 on white), amber on dark areas (8.0:1 on navy).
+   The extra selectors beat Bootstrap, which sets outline:0 and a faint glow on these elements. */
+:focus-visible,
+.btn:focus-visible, .nav-link:focus-visible, .navbar-toggler:focus-visible, .accordion-button:focus-visible, .btn-close:focus-visible, .page-link:focus-visible {
+  outline: 3px solid var(--primary-dark);
   outline-offset: 3px;
+  box-shadow: none;
   border-radius: 4px;
 }
-.site-footer :focus-visible, .hero :focus-visible, .navbar-toggler:focus-visible { outline-color: var(--accent-hover); }
+.btn:focus-visible, .nav-link.nav-join:focus-visible { border-radius: 999px; }
+.site-footer :focus-visible, .hero :focus-visible, .page-header :focus-visible { outline-color: var(--accent-hover); }
 
 .skip-link {
   position: absolute; left: var(--space-3); top: -4rem; z-index: 2000;
   background: var(--primary-dark); color: #fff; padding: .6rem 1rem;
   border-radius: var(--radius-sm); font-weight: 600;
 }
+main:focus { outline: none; }   /* main is focus target of the skip link only */
 .skip-link:focus { top: var(--space-3); color: #fff; }
 
 /* 3. LAYOUT --------------------------------------------------------------- */
